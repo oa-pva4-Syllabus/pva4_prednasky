@@ -110,7 +110,7 @@ layout: image-right
 image: https://cover.sli.dev
 ---
 
-# PVA2 Programování a vývoj aplikací
+# PVA4 Programování a vývoj aplikací
 
 
 ## Cíle předmětu 

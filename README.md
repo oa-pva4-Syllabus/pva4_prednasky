@@ -1,11 +1,7 @@
-# Welcome to [Slidev](https://github.com/slidevjs/slidev)!
+# Přednášky předmětu PVA4
 
-To start the slide show:
-
-- `npm install`
-- `npm run dev`
-- visit <http://localhost:3030>
-
-Edit the [slides.md](./slides.md) to see the changes.
-
-Learn more about Slidev at the [documentation](https://sli.dev/).
+## Obsah
+| Přednáška                            | Odkaz na prezentaci                                                          |
+|--------------------------------------|------------------------------------------------------------------------------|
+| 00. Úvodní hodina                    | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/00_uvodni_hodina/) |
+| 35. Git Markdown                     | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/35_git_markdown/)  |
