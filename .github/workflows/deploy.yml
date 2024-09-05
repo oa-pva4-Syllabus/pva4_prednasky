@@ -47,7 +47,7 @@ jobs:
         uses: actions/configure-pages@v4
 
       - name: Install Playwright
-        run: pnpm add playwright -w
+        run: pnpm add playwright
 
       - name: Install Playwright browsers
         run: pnpm exec playwright install
