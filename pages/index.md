@@ -1,7 +1,7 @@
 # {{ $slidev.configs.title }}
 
 <div class="">
-    <p class="opacity-75">PVA2 Programování a vývoj aplikací</p>
+    <p class="opacity-75">PVA4 Programování a vývoj aplikací</p>
 </div>
 <!--
 <div class="absolute bottom-10">
