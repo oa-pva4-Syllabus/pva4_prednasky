@@ -1,0 +1,43 @@
+{
+  "name": "pva4_prednasky",
+  "description": "Přednášky PVA4",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "pnpm clean && zx ./scripts/build.js",
+    "postbuild": "node scripts/build-index.js",
+    "clean": "zx ./scripts/clean.js",
+    "export": "pnpm -r run export"
+  },
+  "subPackages": [
+    "slides/*"
+  ],
+  "packageManager": "pnpm@9.9.0",
+  "dependencies": {
+    "@slidev/cli": "^0.49.29",
+    "@slidev/theme-default": "latest",
+    "@slidev/types": "^0.49.29",
+    "pnpm": "^9.2.0"
+  },
+  "devDependencies": {
+    "@iconify-json/material-symbols": "^1.2.0",
+    "@iconify-json/mdi": "^1.2.0",
+    "fs-extra": "^10.1.0",
+    "playwright": "^1.46.1",
+    "playwright-chromium": "^1.46.1",
+    "plop": "^4.0.1",
+    "rimraf": "^5.0.10",
+    "shiki": "^1.16.2",
+    "zx": "^7.2.3"
+  },
+  "keywords": [
+    "python",
+    "pva",
+    "prednasky",
+    "vyuka",
+    "oa",
+    "oaopava"
+  ],
+  "author": "Adam Fišer <adam.fiser@wanex.cz>",
+  "license": "CC BY-NC 4.0"
+}
