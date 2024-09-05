@@ -143,22 +143,6 @@ layout: two-cols-header
 
 <v-click>
 
-# Python
-* Strukturované programování
-  * Datové typy
-  * řídící struktury (cykly, podmínky, funkce)
-  * Datová výměna
-  * Exceptions
-  * Datum a čas
-* Úvod do OOP
-  * Třída, objekt, metody, property
-
-</v-click>
-
----
-
-# Co nás čeká
-
 * Databázové systémy
 * Entity-Relationship model
 * Structured Query Language
@@ -166,6 +150,8 @@ layout: two-cols-header
 * DB (vytvoření, indexy, relace)
 * Kompozice DB do aplikace
 * Nette Framework
+
+</v-click>
 
 ---
 
