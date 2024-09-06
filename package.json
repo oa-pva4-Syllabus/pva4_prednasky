@@ -9,6 +9,9 @@
     "clean": "zx ./scripts/clean.js",
     "export": "pnpm -r run export"
   },
+  "workspaces": [
+    "slides/*"
+  ],
   "subPackages": [
     "slides/*"
   ],
@@ -31,7 +34,7 @@
     "zx": "^7.2.3"
   },
   "keywords": [
-    "python",
+    "php",
     "pva",
     "prednasky",
     "vyuka",
