@@ -1,0 +1,13 @@
+{
+  "name": "03_konstrukt1_zaklady_promenne_vystupy",
+  "title": "Skeleton",
+  "author": { "name": "Adam Fišer" },
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export --output ../03_konstrukt1_zaklady_promenne_vystupy.pdf"
+  }
+}
