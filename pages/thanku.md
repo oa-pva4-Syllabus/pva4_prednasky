@@ -1,6 +1,7 @@
 ---
 layout: end
 class: text-center
+hideInToc: true
 ---
 
 # Děkuji za pozornost
