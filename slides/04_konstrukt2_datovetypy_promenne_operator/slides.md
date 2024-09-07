@@ -130,7 +130,7 @@ echo $promenna; // Hello, world PVA!
 
 ---
 
-# Integer
+# `Integer`
 
 * Celé číslo
 * Může být záporné nebo kladné
@@ -158,7 +158,7 @@ var_dump($cislo); // int(42)
 
 ---
 
-# Float
+# `Float`
 
 * Datový typ pro reálná čísla s plovoucí desetinnou čárkou
 * Desetinné číslo
@@ -204,7 +204,7 @@ $var1 / $var3;
 
 ---
 
-# Boolean
+# `Boolean`
 
 * Logický datový typ
 * Může nabývat hodnot `true` nebo `false`
@@ -255,7 +255,7 @@ hideInToc: true
 
 ---
 
-# NULL
+# `NULL`
 
 * Speciální hodnota, která znamená, že proměnná nemá žádnou hodnotu
 * V PHP je možné použít i hodnotu `null`
