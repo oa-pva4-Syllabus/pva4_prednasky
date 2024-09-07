@@ -74,7 +74,9 @@ Z kontextu se datový typ rozpozná také při operacích, příkladem může b�
 * Apostrof - `'`
 * Dvojité uvozovky - `"`
 * Výhoda dvojitých uvozovek je možnost vkládat proměnné do řetězce
+* Nevýhoda dvojitých uvozovek je, že PHP musí prohledat řetězec a nahradit proměnné za jejich hodnoty + zpracovat escape sekvence
 * V případě potřeby můžeme text rozdělit do více řádků
+* Skládání řetězců pomocí tečky `.`
 
 
 <v-click>
@@ -83,18 +85,40 @@ Z kontextu se datový typ rozpozná také při operacích, příkladem může b�
 
 </v-click>
 
-<v-click>
+---
+hideInToc: true
+---
+
+# `String`
 
 ```php
 $jmeno = 'PVA';
-$promenna = 'Hello, world $jmeno!';
-echo $promenna; // Hello, world $jmeno!
+echo $jmeno; // PVA
+```
+
+<v-click>
+
+### Spojování řetězců
+
+* Spojení řetězců pomocí tečky `.`
+* Tečka slouží k spojení dvou nebo více řetězců
+
+```php {all|1-4|6|7|8|all}
+$jmeno = 'PVA';
+$promenna = 'Hello, world!';
+echo $jmeno;    // PVA
+echo $promenna; // Hello, world!
+
+echo 'Hello, world ' . 'PVA';          // Hello, world PVA
+echo 'Hello, world ' . $jmeno;          // Hello, world PVA
+echo 'Hello, world ' . $jmeno . '!';    // Hello, world PVA!
 ```
 
 </v-click>
 
-
 <v-click>
+
+### Spojování řetězců s uvozovkou
 
 ```php
 $jmeno = "PVA";
