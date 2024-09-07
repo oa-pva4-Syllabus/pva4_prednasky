@@ -420,8 +420,10 @@ Pozor, přetypování může způsobit ztrátu dat, například při přetypová
 * PHP je dynamicky typovaný jazyk
 * Datové typy se určují automaticky podle obsahu proměnné
 * PHP podporuje několik základních datových typů: Integer, Float, String, Boolean, Array, Object, NULL
+* Spojujeme řetězce pomocí tečky `.`
 * Operátory slouží k provádění operací mezi hodnotami
 * Pole je uspořádaná kolekce hodnot
+* K hodnotě pole přistupujeme přes číselný index nebo klíč
 * Pole může být asociativní nebo indexované
 * Pole může být multidimenzionální
 * Přetypování je změna datového typu proměnné
