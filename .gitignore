@@ -19,5 +19,12 @@ slides/**/components/
 
 # Ignorovat soubory global_bottom.vue v adresáři slides
 slides/**/global_bottom.vue
+
+# Ignorovat shiki v adresáři slides
+slides/**/setup/
+
+
+# Ignorovat soubory global_bottom.vue v adresáři slides
+slides/**/global_bottom.vue
 # use pnpm-lock
 yarn.lock
