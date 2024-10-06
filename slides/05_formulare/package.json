@@ -1,0 +1,13 @@
+{
+  "name": "05_formulare",
+  "title": "formulare",
+  "author": { "name": "Adam Fišer" },
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "slidev",
+    "build": "slidev build",
+    "export": "slidev export --output ../05_formulare.pdf"
+  }
+}
