@@ -15,7 +15,7 @@ lineNumbers: true
 
 #== Dravings https://sli.dev/guide/drawing
 drawings:
-  persist: false
+  persist: true
 
 #== Export Configuration
 # use export CLI options in camelCase format https://sli.dev/guide/exporting.html
@@ -53,6 +53,10 @@ layout: default
 - Umožňuje uživateli zadat data, která jsou odeslána na server.
 - Formulář je tvořen HTML tagy `<form>`, `<input>`, `<textarea>`, `<select>`, `<button>`, `<label>`, `<fieldset>`, `<legend>`, `<optgroup>`, `<option>`, `<datalist>`, `<output>`.
 
+
+- `action` - cílová URL, kam se mají data odeslat.
+- `method` - metoda odeslání dat, GET nebo POST.
+
 ```html
 <form action="destUrl.php" method="post">
 Name: 	<input type="text" name="name"><br>
@@ -62,17 +66,16 @@ E-mail:	<input type="text" name="email"><br>
 ```
 
 
-
 ---
-
-# Metody odeslání dat na server
-
-- Metoda `GET` - data jsou odeslána jako query string v URL.
-- Metoda `POST` - data jsou odeslána jako součást HTTP requestu.
-
+layout: cover
+background: https://cover.sli.dev
 ---
 
 # Metoda GET
+
+---
+
+# Metoda `GET`
 
 - Jedná se o vestavěnou superglobální proměnnou PHP pole, která se používá k získání hodnot odeslaných prostřednictvím metody HTTP GET.
 - K proměnné pole lze přistupovat z libovolného skriptu v programu; má globální rozsah.
@@ -88,9 +91,10 @@ E-mail:	<input type="text" name="email"><br>
 - Umožňuje uložit výsledky formuláře HTML.
 - Metodu GET můžete snadno použít k vyžádání požadovaných údajů.
 
+
 ```php
 echo '
-    <form action="destUrl.php" method="post">
+    <form action="destUrl.php" method="get">
         Name: 	<input type="text" name="name"><br>
         E-mail:	 <input type="text" name="email"><br>
         <input type="submit">
@@ -111,7 +115,7 @@ echo '
 
 ```php
 echo '
-    <form action="destUrl.php" method="post">
+    <form action="destUrl.php" method="get">
         Name: 	<input type="text" name="name"><br>
         E-mail:	 <input type="text" name="email"><br>
         <input type="submit" value="odeslat">
@@ -139,6 +143,10 @@ background: https://cover.sli.dev
 ---
 
 # Metoda POST
+
+---
+
+# Metoda `POST`
 
 - Metoda POST je způsob odesílání dat z formuláře na server.
 - Data odeslaná pomocí metody POST nejsou viditelná v URL.
@@ -198,6 +206,18 @@ $_POST['email'];
 |Hodnoty nejsou viditelné v URL| Hodnoty jsou viditelné v URL                                                                                                                        |
 |Není omezena délka hodnot odeslaných přes body HTTP| Omezená délka odeslaných dat běžně na 255, výjimečně až 2000 znaků. Omezení je dáno prohlížečem a maximální délkou zobrazenou a zpracovávanou v URL |
 |Nižší výkon ve srovnání s PHP_GET kvůli času zapouzdření do těla HTTP| Ve srovnání s metodou GET má vyšší výkon ve zpracování pro svou jednoduchou povahu přidávání do URL                                                 |
+
+
+
+---
+hideInToc: true
+---
+
+# Srovnání POST a GET
+
+
+|POST | GET                                                                                                                                                 |
+|---|-----------------------------------------------------------------------------------------------------------------------------------------------------|
 |Podporuje více datových typů např. string, číslo, binární data| Podporuje pouze základní datový typ string                                                                                                          |
 |Výsledky nelze uložit do záložky prohlížeče.| URL může být uložena v záložkách probhlížeče, neboť adresa obsahuje všechny data                                                                    |
 |Velmi těžko se cachuje| Je často cachovatelný                                                                                                                               |
@@ -215,24 +235,29 @@ $_POST['email'];
 - htmlspecialchars() - funkce, která převede speciální znaky na HTML entity. Tím se zabrání XSS útokům.
 - Nutno vždy zkontrolovat, zda byla data odeslána a zda obsahují očekávané hodnoty.
 
-**POST**
+---
+
+# Po odeslání formuláře
+
+POST
 ```php
 // Podmínka kontrolující odeslání formuláře – metoda POST
 // Pokud podmínka neexistuje, skript se spustí i při prvním načtení stránky
-// Podmínka je zde pro zajištění, že skript se spustí pouze po odeslání formuláře
 if ($_SERVER["REQUEST_METHOD"] == "POST") {  
   
-    // Tento kód je realizován, po odeslání
-	echo '<h2>Thank You '. htmlspecialchars($_POST['name']) .'</h2>';
+	// Tento kód je realizován, po odeslání formuláře
+	$name = htmlspecialchars($_POST['name']); 
+	echo '<h2>Thank You '. $name .'</h2>';
 }
 ```
 
-**GET**
+GET
 ```php
 if ($_SERVER["REQUEST_METHOD"] == "GET") {  
   
-    // Tento kód je realizován, po odeslání
-	echo '<h2>Thank You '. htmlspecialchars($_GET['name']) .'</h2>';
+	// Tento kód je realizován, po odeslání formuláře
+	$name = htmlspecialchars($_GET['name']);
+	echo '<h2>Thank You '. $name .'</h2>';
 }
 ```
 
