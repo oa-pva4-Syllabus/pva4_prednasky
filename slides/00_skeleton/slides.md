@@ -34,7 +34,7 @@ info: |
   ## PVA4 Programování a vývoj aplikací
 
   Určeno pouze pro výukové účely
-  
+
   [Repository](https://github.com/OA-PVA4-Syllabus/pva4_prednasky) / [Prezentace](https://oa-pva4-syllabus.github.io/pva4_prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
@@ -49,8 +49,8 @@ layout: default
 
 # Úvod
 
-* Text
-* Text
+- Text
+- Text
 
 
 
@@ -58,9 +58,9 @@ layout: default
 
 # Druhý slajd
 
-* A
-* B
-* C
+- A
+- B
+- C
 
 
 
