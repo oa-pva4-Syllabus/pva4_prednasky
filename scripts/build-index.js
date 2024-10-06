@@ -5,7 +5,7 @@ const TALKS_PATH = 'slides/';
 const OUTPUT_PATH = 'dist';
 const PUBLIC_PATH = 'public/';
 const talks = [];
-const SKIP_TALKS = ['00_skeleton']; // , '00_uvodni_hodina' Seznam přednášek k přeskočení
+const SKIP_TALKS = ['00_skeleton', '00_uvodni_hodina']; // , '00_uvodni_hodina' Seznam přednášek k přeskočení
 
 const currentYear = new Date().getFullYear();
 
