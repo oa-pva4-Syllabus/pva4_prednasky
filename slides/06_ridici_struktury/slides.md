@@ -345,6 +345,108 @@ do {
 
 ```
 
+---
+layout: cover
+background: https://cover.sli.dev
+---
+
+# Funkce
+
+---
+
+# Funkce vs Procedura
+
+- Funkce je blok kódu, který můžeme znovu použít
+- může přijímat parametry a vrací hodnotu
+- Procedura je blok kódu, který může být znovu použit, ale nevrací hodnotu
+
+---
+
+# Interní funkce
+
+- PHP má více než 1000 vestavěných funkcí a navíc si můžete vytvořit vlastní funkce.
+- Kompletní přehled funkcí je uveden na php.net
+- Každou funkci lze volat přímo ze skriptu a provést specifickou úlohu.
+ 
+---
+
+# Uživatelsky definovalé funkce
+
+- Funkce můžete definovat pomocí klíčového slova `function`
+- Nesputí se, dokud nejsou zavolány tzn. nejsou spouštěny automaticky ani při načtení stránky
+- Název funkce musí začínat písmenem nebo podtržítkem, na velikosti písmen nezáleží
+- Návratová hodnota přes `return`
+- Datový typ návratové hodnoty je uveden za dvojtečkou
+
+```php
+function nazevFunkce(): datovyTyp {
+  // příkazy
+  
+  // návratová hodnota
+  return $vysledek;
+}
+```
+
+---
+
+# Volání funkce
+
+- Funkci zavoláme pomocí jejího názvu a závorek
+- Pokud funkce přijímá parametry, musíme je uvést v závorkách
+
+```php
+nazevFunkce();
+```
+
+Ukázka
+```php
+function pozdrav(): string {
+  return "Ahoj!";
+}
+
+echo pozdrav();
+```
+
+---
+
+# Parametry funkce
+
+- Parametry jsou hodnoty, které funkce přijímá a jsou nutné pro vykonání funkce
+- jsou uvedeny v závorkách a odděleny čárkou ve tvaru `datovyTyp parametr1, datovyTyp parametr2, ...`
+- Mají pouze lokální platnost
+- Můžeme nastavit výchozí hodnotu parametru přiřazení hodnoty za `=`
+
+```php
+function nazevFunkce(string $parametr1, int $parametr2 = null): string {
+  // příkazy
+}
+```
+
+---
+
+# Příklad
+
+```php
+// zapnutí vyžadování dodržování kontroly datových typů
+// standardně se uvádí hned za <?php
+declare(strict_types=1);
+```
+
+```php
+function writeMessage(string $name, string $msg = "nic nenapsal"): string {
+  $output = $name . ' napsal: ' . $msg;
+  return $output;
+}
+```
+
+```php
+// volání funkce
+echo writeMessage('Honza', 'První zpráva');             # Honza napsal: První zpráva
+echo writeMessage('David', 'Druhá zpráva');             # David napsal: Druhá zpráva
+echo writeMessage('Ilona', 'Jiná zpráva do výstupu');   # Ilona napsal: Jiná zpráva do výstupu
+echo writeMessage('Petr');                              # Petr napsal: nic nenapsal
+```
+
 
 ---
 src: '../../pages/thanku.md'
