@@ -81,6 +81,13 @@ Prokázaní identity lze rozdělit dle toho:
 > Čím vyšší bezpečnost služby vyžadují, tím je nutné použít silnější autentizaci.
 
 ---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Kde používáte dvou/tří-faktorovou autentizaci?
+
+---
 
 # Autorizace
 
@@ -104,6 +111,19 @@ Prokázaní identity lze rozdělit dle toho:
 - Cílem je ochrana aktiv před neoprávěným užitím nebo vstupem. 
 - Díky řízení oprávnění tedy organizace chrání své zdroje.
 - Řízení oprávnění se týká konkrétních osob, protože se vždy vztahuje ke konkrétnímu člověku. Může ale zahrnovat i oprávnění systémů (které zprostředkovaně umožňují autentizaci lidí - uživatelů). Příkladem je přihlašování uživatelů přes takzvané single-sign-on.
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Navrhněte login proces pro webovou aplikaci
+
+<!--
+každý student si vytvoří svůj vlastní návrh
+čas 5 minut
+jaké kroky musí aplikace a uživatel udělat, při přihlašování
+-->
 
 ---
 
