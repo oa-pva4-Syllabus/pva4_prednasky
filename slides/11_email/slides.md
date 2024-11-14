@@ -70,13 +70,21 @@ layout: default
 | `Reply-To` | Adresa pro odpověď | `Reply-To: odpoved@mail.cz`            |
 | `Subject` | Předmět zprávy | `Subject: Aktivace účtu`                 |
 | `Content-Type` | Typ obsahu | `Content-Type: text/html; charset=utf-8` |
-| `Content-Transfer-Encoding` | Kódování obsahu | `Content-Transfer-Encoding: 8bit`        |
+| `Date` | Datum odeslání | `Date: Mon, 11 Nov 2024 12:00:00 +0100`  |
+
+---
+
+# Hlavičky emailu
+
+| Hlavička | Popis | Příklad                                  |
+| --- | --- |------------------------------------------|
 | `MIME-Version` | Verze MIME | `MIME-Version: 1.0`                      |
 |`Return-Path` | Návratová adresa | `Return-Path: helpdesk@wanex.cz`         |
 | `X-Mailer` | Informace o odesílateli | `X-Mailer: PHP/8.1`                      |
 | `X-Priority` | Priorita zprávy | `X-Priority: 1`                          |
 | `X-MSMail-Priority` | Priorita zprávy | `X-MSMail-Priority: High`                |
-| `Date` | Datum odeslání | `Date: Mon, 11 Nov 2024 12:00:00 +0100`  |
+| `Content-Transfer-Encoding` | Kódování obsahu | `Content-Transfer-Encoding: 8bit`        |
+
 
 ---
 
@@ -99,8 +107,13 @@ $hlavicky[] = 'Bcc: skryta@kopie.cz';
 
 # `mail()`
 
-```php
+- Emailová adresa může být ve tvaru:
+  - Čistá emailová adresa `prijemce@domena.com`
+  - Emailová adresa s jménem `Jméno Příjemce <prijemce@domena.com>`
+- Předmět a obsah zprávy mohou být textové nebo HTML.
+- Pro HTML emaily je nutné nastavit `Content-Type` na `text/html`.
 
+```php
 $emailPrijemce = 'muj@email.com';
 $predmet = 'Předmět emailové zprávy';
 $obsah = 'Obsah zprávy';
@@ -119,17 +132,17 @@ mail($emailPrijemce, $predmet, $obsah, implode("\r\n", $hlavicky));
 - Pro vývoj je vhodné použít nástroje jako Mailtrap, Papercut SMTP,...
 
 ## Papercut SMTP
-- Vyžaduje .NET 8+ Desktop Runtime - https://dotnet.microsoft.com/en-us/download/dotnet/8.0
-- https://github.com/ChangemakerStudios/Papercut-SMTP
-- stáhnout z poslední release portable verzi a spustit (Pokud chcete používat pravidelně, stáhnout instalátor)
-- 
+- .NET 8+ Desktop Runtime
+  - https://dotnet.microsoft.com/en-us/download/dotnet/8.0
+- z poslední release vybrat portable verzi a spustit (Pokud chcete používat pravidelně, stáhnout instalátor)
+  - https://github.com/ChangemakerStudios/Papercut-SMTP
 
 ---
 
-# Nastavení php.ini
+# Nastavení `php.ini`
 
 - Pro odesílání emailů je nutné mít nastavený SMTP server.
-- Nastavení se provádí v souboru `php.ini`
+- Nastavení se provádí v souboru `C:\xampp\php\php.ini`
 
 ```ini
 [mail function]
