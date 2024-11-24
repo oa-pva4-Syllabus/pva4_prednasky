@@ -56,7 +56,9 @@ layout: default
 - Podle identifikátoru pozná server, k jakému klientu data patří.
 - Uživatel neví, co je v sessions uloženo.
 
+<br>
 
+> Používání sessions na serveru generuje mnoho malých souborů, na které je nutné myslet v rámci údržby a správy aplikace a serveru.
 
 
 ---
@@ -64,11 +66,13 @@ layout: default
 # Session v PHP
 
 
-```php
+```php {all|2-4|8-12|16-19|all} {maxHeight:'300px'}
 <?php
 // nastartování session
 // musí být na začátku každého souboru (ideálně v common.php)
 session_start();
+
+// ...
 
 // uložení hodnot do session
 // pracujeme s superglobální proměnnou $_SESSION
@@ -76,18 +80,20 @@ $_SESSION['userId'] = 1;
 $_SESSION['user'] = 'Adam';
 $_SESSION['role'] = 'admin';
 
+// ...
+
 // zobrazení hodnot
 // klasicky přes index
 echo $_SESSION['user'];
-
 ```
 
 ---
 
-# Session v PHP
+# Ukončení session
 
-```php
-<?php
+```php {all|3-4|6-7|9-12|all}
+// ...
+
 // odstranění konkrétní hodnoty
 unset($_SESSION['user']);
 
@@ -95,8 +101,10 @@ unset($_SESSION['user']);
 session_unset();
 
 // ukončení session
-// odstraní všechny session proměnné, adekvátní k funkci session_start((
+// odstraní všechny session proměnné, adekvátní k funkci session_start()
+// ideální pro zařazení do common footeru
 session_destroy();
+?>
 ```
 
 ---
