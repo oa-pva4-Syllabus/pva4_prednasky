@@ -1,5 +1,5 @@
 {
-  "name": "20_db_nastaveni",
+  "name": "20_DB_nastaveni",
   "title": "Nastavení prostředí",
   "author": { "name": "Adam Fišer" },
   "type": "module",
@@ -8,6 +8,6 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
-    "export": "slidev export --output ../20_db_nastaveni.pdf"
+    "export": "slidev export --output ../20_DB_nastaveni.pdf"
   }
 }

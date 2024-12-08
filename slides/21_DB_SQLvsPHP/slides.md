@@ -27,7 +27,7 @@ export:
 
 #== Slide Info
 src: '../../pages/index.md'
-title: "Databáze: SQL vs PHP"
+title: "Databáze SQL vs PHP"
 exportFilename: "21_DB_SQLvsPHP"
 titleTemplate: "PVA4 %s by Adam Fišer"
 info: |
