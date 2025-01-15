@@ -7,6 +7,7 @@ import "zx/globals";
 import {rimraf} from "rimraf";
 
 const GitPagesBase = "pva4_prednasky/"
+const GitPagesURL = "https://oa-pva4-syllabus.github.io/"
 
 const rootDir = path.resolve(__dirname, "../");
 const slidesDir = path.resolve(__dirname, "../slides");
@@ -79,7 +80,7 @@ export default defineConfig({
   await fse.remove(src);
 
   // Add entry to README content
-  readmeContent += `| ${pkgName} | [Odkaz](/${GitPagesBase}${pkgName}/) |\n`;
+  readmeContent += `| ${pkgName} | [Odkaz](${GitPagesURL}${GitPagesBase}${pkgName}/) |\n`;
 }
 
 // Write README.md
