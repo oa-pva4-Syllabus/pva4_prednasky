@@ -98,6 +98,8 @@ CREATE TABLE zakaznik (
 - Velikost datového typu může být uvedena v závorce `()`. Vždy uvádíme množství očekávaných dat o řád větší. Tím si zajistíme dostatečnou rezervu pro budoucí rozšíření. Např. pro uložení dat do 1000 je potřeba `INT(4)`.
 
 ---
+layout: two-cols
+---
 
 # Příklad
 
@@ -108,6 +110,8 @@ CREATE TABLE zakaznik (
   - `cislo_karty` - celé číslo o maximální délce 3 tzn. očekáváme maximálně dvoumístné čísla, např. 1-99, ale máme dostatečnou rezervu pro budoucí rozšíření
   - `datum_narozeni` - datum
   - `registrace` - datum a čas
+
+::right::
 
 ```sql
 CREATE TABLE zakaznik (
