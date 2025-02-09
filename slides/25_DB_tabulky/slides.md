@@ -49,10 +49,46 @@ layout: default
 
 # Úvod
 
-- Porozumět základní syntaxi příkazu CREATE TABLE.
-- Vytvořit tabulku s různými datovými typy.
-- Použít primární a cizí klíče.
-- Zabezpečit data pomocí omezení (constraints).
+- Ukážeme si, jak vytvářet databáze a tabulky v SQL.
+- Vytvoříme tabulky s různými datovými typy a omezeními.
+- Naučíme se, jak vytvářet primární a cizí klíče.
+- Ukážeme si, jak provádět změny v tabulkách.
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Databáze
+
+---
+
+# Vytvoření databáze
+
+- Pro vytvoření databáze v SQL používáme příkaz `CREATE DATABASE`.
+- Syntaxe příkazu:
+
+```sql
+CREATE DATABASE nazev_databaze;
+```
+
+```sql
+CREATE DATABASE obchod
+  DEFAULT CHARACTER SET utf8mb4
+  DEFAULT COLLATE utf8mb4_unicode_ci;
+```
+
+- Nastavili jsme výchozí kódování pro databázi a pro porovnávání znaků.
+- `utf8mb4` je kódování, které podporuje 4-byte Unicode znaky, což zahrnuje i emoji a další speciální znaky.
+- `utf8mb4_unicode_ci` je kódování, které podporuje porovnávání znaků v různých jazycích.
+- Podrobnější informace o kódování v databázích jsou v dalších slajdech.
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Tabulky
 
 ---
 
@@ -336,7 +372,7 @@ erDiagram
         VARCHAR(100) email
         INT fakt_adresa_id FK "REFERENCES ADRESY(id) ON DELETE SET NULL"
     }
-
+    
     ADRESY {
         INT id PK "AUTO_INCREMENT"
         INT zakaznik_id FK "REFERENCES ZAKAZNIK(id)"
@@ -345,8 +381,7 @@ erDiagram
         VARCHAR(100) mesto
         VARCHAR(10) psc
         VARCHAR(3) stat "DEFAULT 'CZE'"
-    } 
-    
+    }
     
     OBJEDNAVKA {
         INT id PK "AUTO_INCREMENT"
@@ -427,7 +462,6 @@ CREATE TABLE POLOZKA (
        ON DELETE CASCADE
        ON UPDATE CASCADE
 ) ENGINE=InnoDB;
-
 
 ```
 
