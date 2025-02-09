@@ -505,7 +505,65 @@ ALTER TABLE zakaznik ADD id INT PRIMARY KEY AUTO_INCREMENT;
 ALTER TABLE objednavka ADD FOREIGN KEY (zakaznik_id) REFERENCES zakaznik(id);
 ```
 
+---
 
+# Odstranění
+
+- Pro odstranění tabulky v SQL používáme příkaz `DROP TABLE
+- Pro odstranění databáze v SQL používáme příkaz `DROP DATABASE`.
+
+```sql
+DROP TABLE nazev_tabulky;
+```
+
+```sql
+DROP DATABASE nazev_databaze;
+```
+
+- **Pozor!** Odstranění tabulky nebo databáze je <span v-mark.highlight.yellow="1">nevratné a všechna data budou ztracena</span>.
+
+---
+
+# Vymazání obsahu
+
+- Pro vymazání obsahu tabulky v SQL používáme příkaz `TRUNCATE TABLE`.
+- Odstraní se všechny záznamy a resetuje se autoinkrementace. Tabulka zůstane zachována.
+- **Pozor!** Tento příkaz je <span v-mark.highlight.yellow="1">nevratný a všechna data budou ztracena</span>.
+
+```sql
+TRUNCATE TABLE nazev_tabulky;
+```
+
+---
+
+# Shrnutí
+**1/2**
+
+**Vytváření databází a tabulek**  
+- Používáme příkazy `CREATE DATABASE` a `CREATE TABLE` k vytvoření základní struktury databáze.
+
+**Datové typy a omezení**  
+- Každý sloupec má svůj specifický datový typ (např. `INT`, `VARCHAR`, `DATE`) a můžeme uplatnit omezení jako `NOT NULL`, `UNIQUE`, `DEFAULT` a další, abychom zajistili správnost a konzistenci dat.
+
+**Klíče**
+- **Primární klíč:** Zaručuje jednoznačnou identifikaci každého řádku.
+- **Cizí klíč:** Umožňuje definovat vztahy mezi tabulkami a udržovat referenční integritu. Možnost nastavení akcí jako `ON DELETE CASCADE` či `ON DELETE SET NULL`.
+
+---
+
+# Shrnutí
+**2/2**
+
+**Engine a kódování**  
+- Volba engine (např. `InnoDB`) určuje způsob ukládání a vyhledávání dat. Kódování, doporučené `utf8mb4`, zajišťuje podporu široké škály znaků včetně speciálních znaků a emoji.
+
+**Úpravy a správa tabulek**  
+- Pomocí příkazu `ALTER TABLE` lze přidávat, měnit nebo mazat sloupce a klíče, což umožňuje flexibilní úpravy struktury tabulek dle aktuálních potřeb.
+
+**Odstranění a vymazání dat**
+- `DROP TABLE` a `DROP DATABASE` odstraní celou strukturu databáze nebo tabulky.
+- `TRUNCATE TABLE` smaže všechny záznamy v tabulce, přičemž struktura zůstane zachována.
+- **Pozor!** Všechny tyto příkazy jsou <span v-mark.highlight.yellow="1">nevratné a všechna data budou ztracena</span>.
 
 
 ---
