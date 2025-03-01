@@ -17,4 +17,7 @@
 | 21_DB_SQLvsPHP | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/21_DB_SQLvsPHP/) |
 | 22_DB_select | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/22_DB_select/) |
 | 23_DB_relace | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/23_DB_relace/) |
+| 24_DB_agregace | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/24_DB_agregace/) |
+| 25_DB_tabulky | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/25_DB_tabulky/) |
+| 26_DB_insert | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/26_DB_insert/) |
 | 35_git_markdown | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/35_git_markdown/) |
