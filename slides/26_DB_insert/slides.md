@@ -47,12 +47,11 @@ layout: default
 <Toc :columns="2" minDepth="1" maxDepth="1"></Toc>
 ---
 
-# Úvod
+# Vkládání dat do databáze
 
-- Text
-- Text
-
-
+- Založení nového záznamu v databázi.
+- Použití SQL příkazu `INSERT INTO`.
+- Ošetření vstupů pomocí
 
 ---
 
@@ -60,15 +59,15 @@ layout: default
 
 Projekt bude rozdělen do následujících souborů:
 
-- config.php – Konfigurační soubor s přihlašovacími údaji.
-- common.php – Soubor pro připojení k databázi.
-- functions.php – Soubor pro pomocné funkce.
-- formular.html – HTML formulář pro zadávání dat.
-- vloz.php – Hlavní skript pro zpracování dat a vložení do databáze.
+- `config.php` – Konfigurační soubor s přihlašovacími údaji.
+- `common.php` – Soubor pro připojení k databázi.
+- `functions.php` – Soubor pro pomocné funkce.
+- `formular.php` – HTML formulář pro zadávání dat.
+- `vloz.php` – Hlavní skript pro zpracování dat a vložení do databáze.
 
 ---
 
-# Konfigurační soubor
+# Konfigurační soubor `config.php`
 
 ```php
 <?php
@@ -90,7 +89,7 @@ $config = [
 declare(strict_types=1);
 
 require('config.php');
-require( )'functions.php');
+require('functions.php');
 
 $conn = mysqli_connect($config['servername'], $config['username'], $config['password'], $config['dbname']);
 
@@ -127,15 +126,18 @@ function jePlatnyEmail(string $email): bool {
 
 ---
 
-# HTML formulář `formular.html`
+# HTML formulář `formular.php`
 
-```html
+```php
 ...
+echo "<h2>Vložení nového uživatele</h2>";
+echo $form = ' 
 <form action="vloz.php" method="post">
     Jméno: <input type="text" name="jmeno" required><br>
     Email: <input type="email" name="email" required><br>
     <input type="submit" value="Odeslat">
 </form>
+';
 ...
 ```
 
@@ -143,31 +145,41 @@ function jePlatnyEmail(string $email): bool {
 
 # Vložení dat
 
-```php {*}{maxHeight:'450px'}
+```php {*|1-5|8,37|10-25|27-28|30-36|*}{maxHeight:'450px'}
 <?php
 declare(strict_types=1);
 
+// Připojení běžných souborů
 require('common.php');
 
+// Zpracování formuláře
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Získání a ošetření vstupů
     $jmeno = isset($_POST['jmeno']) ? osetriVstup($_POST['jmeno'], 50) : '';
     $email = isset($_POST['email']) ? osetriVstup($_POST['email'], 100) : '';
 
+    // Kontrola vyplnění polí
     if (empty($jmeno) || empty($email)) {
         die("Chyba: Všechna pole musí být vyplněna.");
     }
 
+    // Kontrola formátu emailu
     if (!jePlatnyEmail($email)) {
         die("Chyba: Neplatný formát emailu.");
     }
 
+    // Další úroveň ošetření vstupů pro SQL dotaz
     $jmeno = mysqli_real_escape_string($conn, $jmeno);
     $email = mysqli_real_escape_string($conn, $email);
 
+    // Příprava SQL dotazu pro vložení nového uživatele
     $sql = "INSERT INTO uzivatele (jmeno, email) VALUES ('$jmeno', '$email')";
+    
+    // Poslání dotazu na server
     if (mysqli_query($conn, $sql)) {
         echo "Nový záznam byl úspěšně vložen";
     } else {
+        // Vypsání chyby v případě neúspěchu (pozor, na produkci nikdy!)
         echo "Chyba: " . mysqli_error($conn);
     }
 }
@@ -197,42 +209,57 @@ if (mysqli_query($conn, $sql)) {
 
 ---
 
-# Práce s vloženým záznamem
+# Vložení souvisejících dat
 
-```php {*}{maxHeight:'450px'}
+```php {*|31-50|33-35|34,37-39|34,39,41|34,39,41-46|*}{maxHeight:'450px'}
 <?php
 declare(strict_types=1);
 
+// Připojení běžných souborů
 require_once('common.php');
 
+// Zpracování formuláře
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Získání a ošetření vstupů
     $jmeno = isset($_POST['jmeno']) ? osetriVstup($_POST['jmeno'], 50) : '';
     $email = isset($_POST['email']) ? osetriVstup($_POST['email'], 100) : '';
 
+    // Kontrola vyplnění polí
     if (empty($jmeno) || empty($email)) {
         die("Chyba: Všechna pole musí být vyplněna.");
     }
 
+    // Kontrola formátu emailu
     if (!jePlatnyEmail($email)) {
         die("Chyba: Neplatný formát emailu.");
     }
 
+    // Další úroveň ošetření vstupů pro SQL dotaz
     $jmeno = mysqli_real_escape_string($conn, $jmeno);
     $email = mysqli_real_escape_string($conn, $email);
 
+    // Příprava SQL dotazu pro vložení nového uživatele
     $sql = "INSERT INTO uzivatele (jmeno, email) VALUES ('$jmeno', '$email')";
+    
+    // Poslání dotazu na server
     if (mysqli_query($conn, $sql)) {
+    
+        // Získání ID nového záznamu
         $uzivatel_id = mysqli_insert_id($conn);
         echo "Nový uživatel byl vložen s ID: " . $uzivatel_id;
 
+        // Pokud potřebujeme s novým záznamem pracovat dále
         // Příklad vložení souvisejících dat (např. role uživatele)
-        $sql2 = "INSERT INTO role_uzivatele (uzivatel_id, role) VALUES ('$uzivatel_id', 'student')";
-        if (mysqli_query($conn, $sql2)) {
+        $sql_role = "INSERT INTO role_uzivatele (uzivatel_id, role) VALUES ('$uzivatel_id', 'student')";
+        
+        if (mysqli_query($conn, $sql_role)) {
             echo " Role uživatele byla úspěšně přiřazena.";
         } else {
+            // Vypsání chyby (vložení role) v případě neúspěchu (pozor, na produkci nikdy!)
             echo " Chyba při vkládání role: " . mysqli_error($conn);
         }
     } else {
+        // Vypsání chyby (vložení uživatele) v případě neúspěchu (pozor, na produkci nikdy!)
         echo "Chyba: " . mysqli_error($conn);
     }
 }
