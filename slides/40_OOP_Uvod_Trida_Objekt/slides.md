@@ -195,6 +195,7 @@ $auto2->klakson();
 ```
 
 ---
+
 # Více instancí téže třídy - vhodnější varianta
 
 ```php
