@@ -106,6 +106,37 @@ class user_profile {
 ```
 
 ---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# OOP v PHP
+
+---
+
+# Třída
+
+- Třída obsahuje vlastnosti (properties) a metody (methods)
+- Vlastnosti uchovávají data
+- Metody provádí operace nad daty
+- Třída je šablona, podle které se vytvářejí objekty
+- Objekt je konkrétní instance třídy
+- Třída musí být unikátní, objektů může být vytvořeno libovolné množství
+- Pojmenováváme podstatnými jmény jednotného čísla, např. `Auto`, `Uzivatel`, `Produkt`
+- V PHP se třída definuje klíčovým slovem `class`
+
+---
+
+# Obsah třídy
+
+- Vlastnosti (properties) – data, která objekt uchovává
+- Metody (methods) – operace, které objekt provádí
+  - Konstruktor – metoda, která se volá při vytváření objektu
+  - Vlastní metody - operace, které objekt provádí
+  - Setter a getter – metody pro nastavení a získání hodnot vlastností
+- Na metodu nebo vlastnost se odkazujeme pomocí `->`
+
+---
 
 # Třídy a objekty v PHP
 
@@ -119,6 +150,12 @@ class Auto {
         echo "Píííp!";
     }
 }
+```
+
+- Použití třídy v jiném souboru: 
+```php
+declare(strict_types=1);
+require_once('Auto.php');
 
 // vytvoření objektu
 $mojeAuto = new Auto();
@@ -138,6 +175,11 @@ class Auto {
         echo "Píííp!\n";
     }
 }
+```
+
+```php
+declare(strict_types=1);
+require_once('Auto.php');
 
 $auto1 = new Auto();
 $auto1->barva = "červená";
@@ -173,11 +215,38 @@ foreach ($auta as $index => $auto) {
 
 ---
 
+# Přístup aneb magické this
+
+- `$this` je klíčové slovo, které odkazuje na aktuální objekt
+- Pomocí `$this` můžeme přistupovat k vlastnostem a metodám objektu
+- `$this` je dostupné pouze uvnitř třídy
+
+```php
+class Auto {
+    public string $barva;
+
+    public function klakson(): void {
+        return "Píííp! Barva: " . $this->barva . "\n";
+    }
+}
+```
+
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Metody
+
+---
+
 # Metody
 
 - Metoda je funkce definovaná uvnitř třídy
 - Může přistupovat k vlastnostem objektu přes $this
 - Může mít vstupní parametry a návratovou hodnotu
+- Metody bez návratové hodnoty mají návratový typ `void`
 
 ```php
 class Kalkulacka {
@@ -186,7 +255,7 @@ class Kalkulacka {
     }
 
     public function vypisVysledek(int $vysledek): void {
-        echo "Výsledek: $vysledek\n";
+        echo "Výsledek: $vysledek\n";        
     }
 }
 
