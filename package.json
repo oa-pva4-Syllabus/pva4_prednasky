@@ -9,29 +9,23 @@
     "clean": "zx ./scripts/clean.js",
     "export": "pnpm -r run export"
   },
-  "workspaces": [
-    "slides/*"
-  ],
   "subPackages": [
     "slides/*"
   ],
-  "packageManager": "pnpm@9.9.0",
-  "dependencies": {
-    "@slidev/cli": "^51.4.0",
-    "@slidev/theme-default": "latest",
-    "@slidev/types": "^51.4.0",
-    "pnpm": "^9.15.3"
-  },
+  "packageManager": "pnpm@10.15.0",
   "devDependencies": {
-    "@iconify-json/material-symbols": "^1.2.12",
-    "@iconify-json/mdi": "^1.2.2",
-    "fs-extra": "^10.1.0",
-    "playwright": "^1.49.1",
-    "playwright-chromium": "^1.49.1",
+    "@slidev/cli": "^52.1.0",
+    "@slidev/theme-default": "^0.25.0",
+    "@slidev/types": "^52.1.0",
+    "@iconify-json/material-symbols": "^1.2.33",
+    "@iconify-json/mdi": "^1.2.3",
+    "fs-extra": "^11.3.1",
+    "playwright": "^1.55.0",
+    "playwright-chromium": "^1.55.0",
     "plop": "^4.0.1",
-    "rimraf": "^5.0.10",
-    "shiki": "latest",
-    "zx": "^7.2.3"
+    "rimraf": "^6.0.1",
+    "shiki": "^3.12.0",
+    "zx": "^8.8.1"
   },
   "keywords": [
     "php",
@@ -41,6 +35,10 @@
     "oa",
     "oaopava"
   ],
-  "author": "Adam Fišer <adam.fiser@wanex.cz>",
+  "author": {
+    "name": "Adam Fišer",
+    "url": "https://github.com/AdamFiser",
+    "email": "adam.fiser@wanex.cz"
+  },
   "license": "CC BY-NC 4.0"
 }
