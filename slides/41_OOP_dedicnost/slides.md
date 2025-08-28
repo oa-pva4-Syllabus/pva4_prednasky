@@ -190,7 +190,7 @@ image: https://cover.sli.dev
 
 
 ---
-layout: two-columns
+layout: two-cols
 ---
 
 # Konstruktory a dědičnost
