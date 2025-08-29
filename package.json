@@ -4,9 +4,10 @@
   "type": "module",
   "private": true,
   "scripts": {
-    "build": "pnpm clean && zx ./scripts/build.js",
+    "build": "zx ./scripts/build.js",
     "postbuild": "node scripts/build-index.js",
-    "clean": "zx ./scripts/clean.js",
+    "buildindex": "node scripts/build-index.js",
+    "clean": "node ./scripts/clean.js",
     "export": "pnpm -r run export"
   },
   "subPackages": [

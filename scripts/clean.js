@@ -1,28 +1,33 @@
-#!/usr/bin/env zx
-import "zx/globals";
-import fg from "fast-glob";
-import { rimraf, rimrafSync, native, nativeSync } from 'rimraf'
+#!/usr/bin/env node
+// Multiplatformní clean pro ESM (Windows + Linux), bez Bash/WSL a bez zx
 
-const rootDir = path.resolve(__dirname, "../");
-const slidesDir = path.resolve(__dirname, "../slides");
-const slideProjectDirs = await fg("./*", {
-  cwd: slidesDir,
-  onlyFiles: false,
-  deep: 1,
-  absolute: true,
-});
+import fg from 'fast-glob'
+import path from 'node:path'
+import fs from 'node:fs/promises'
+import { rimraf } from 'rimraf'
+import { fileURLToPath } from 'node:url'
 
-// dist
-if (fs.existsSync(path.resolve(rootDir, "dist"))) {
-  cd(rootDir);
-//  await $`rm -rf dist`;
-  //await $`node rimraf dist`;
-  rimraf('dist')
+// __dirname v ESM:
+const __filename = fileURLToPath(import.meta.url)
+const __dirname  = path.dirname(__filename)
+
+const rootDir   = path.resolve(__dirname, '..')
+const slidesDir = path.resolve(rootDir, 'slides')
+
+// 1) smaž root/dist
+await rimraf(path.join(rootDir, 'dist'))
+
+// 2) najdi všechny slajdy (podle package.json)
+const pkgFiles  = await fg(['*/package.json'], { cwd: slidesDir, absolute: true })
+const slideDirs = pkgFiles.map(p => path.dirname(p))
+
+// 3) úklid v každém slajdu
+for (const dir of slideDirs) {
+    await rimraf(path.join(dir, 'dist'))
+    await rimraf(path.join(dir, '.slidev'))
+    await rimraf(path.join(dir, 'components')) // pokud je během buildu linkuješ
+    await rimraf(path.join(dir, 'setup'))      // dtto
+    await fs.rm(path.join(dir, 'vite.config.ts'), { force: true })
 }
 
-for (let dir of slideProjectDirs) {
-  cd(dir);
-  //  await $`rm -rf dist`;
-  //await $`node rimraf dist`;
-  rimraf('dist')
-}
+console.log('clean: done')
