@@ -43,14 +43,6 @@ const slideDirs = slidePkgPaths
     .map(p => path.dirname(p))
     .sort((a, b) => collator.compare(path.basename(a), path.basename(b)))
 
-const NL = '\n'
-let readme = [
-    '# Seznam přednášek',
-    '',
-    '| Přednáška | Odkaz |',
-    '|-----------|-------|',
-]
-
 async function ensureLinkOrCopy(src, dest) {
     await rimraf(dest)
     if (!await fse.pathExists(src)) return
@@ -116,12 +108,6 @@ for (const dir of slideDirs) {
     await fs.promises.unlink(viteConfigPath).catch(() => {})
     await rimraf(path.join(dir, 'components'))
     await rimraf(path.join(dir, 'setup'))
-
-    // 7) README
-    readme.push(`| ${title} | [Odkaz](${GIT_PAGES_URL}${GIT_PAGES_BASE}${name}/) |`)
 }
-
-// 8) zapiš README
-await fs.promises.writeFile(path.resolve(rootDir, 'README.md'), readme.join(NL) + NL, 'utf8')
 
 console.log('\n🎉  build success')
