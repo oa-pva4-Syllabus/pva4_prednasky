@@ -60,12 +60,18 @@ console.log('✅ index.html hotovo')
 
 // README.md (tabulka)
 const NL = '\n'
+const width = String(entries.length).length // hezké 01, 02, … když je víc položek
 const readmeLines = [
     '# Seznam přednášek',
     '',
-    '| Přednáška | Odkaz |',
-    '|-----------|-------|',
-    ...entries.map(e => `| ${e.title} | [Odkaz](https://oa-pva4-syllabus.github.io/pva4_prednasky/${e.name}/) |`)
+    '| # | Přednáška | PDF |',
+    '|---:|-----------|-----|',
+    ...entries.map((e, i) => {
+        const n = String(i + 1).padStart(width, '0')
+        const live = `https://oa-pva4-syllabus.github.io/pva4_prednasky/${e.name}/`
+        const pdf  = `${live}${e.name}.pdf`
+        return `| ${n} | [${e.title}](${live}) | [PDF](${pdf}) |`
+    }),
 ]
 await fs.writeFile(path.resolve('README.md'), readmeLines.join(NL) + NL, 'utf8')
 
