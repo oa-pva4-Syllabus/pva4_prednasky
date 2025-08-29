@@ -35,7 +35,7 @@ info: |
 
   Určeno pouze pro výukové účely
 
-  [Repository](https://github.com/OA-PVA4-Syllabus/prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
+  [Repository](https://github.com/OA-PVA4-Syllabus/pva4_prednasky) / [Prezentace](https://oa-pva2-syllabus.github.io/pva2_prednasky/)
 
   Created by [Adam Fišer](https://github.com/AdamFiser)
 ---
