@@ -46,11 +46,11 @@ jobs:
         id: pages
         uses: actions/configure-pages@v4
 
-      - name: Install Playwright
-        run: pnpm add playwright
+#      - name: Install Playwright
+#        run: pnpm add playwright
 
       - name: Install Playwright browsers
-        run: pnpm exec playwright install
+        run: pnpm exec playwright install --with-deps
 
 #      - name: Install playwright
 #        run: pnpm exec playwright install
