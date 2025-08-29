@@ -8,4 +8,4 @@ hideInToc: true
 
 Otázky?
 
-[Repository](https://github.com/OA-PVA4-Syllabus/pva4_prednasky) / [Prezentace](https://oa-pva4-syllabus.github.io/pva4_prednasky/)
+[Repository](https://github.com/OA-PVA4-Syllabus/prednasky) / [Prezentace](https://oa-pva4-syllabus.github.io/prednasky/)
