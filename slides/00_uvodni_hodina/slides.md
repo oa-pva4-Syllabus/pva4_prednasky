@@ -64,9 +64,11 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 
 
 ## Kontakt
-* Teamsy
+
+* Výhradně jen Teamsy (přes bakaláře **nepište**)
 * Email: adam.fiser@wanex.cz
-* Konzultace: místnost 217, kdykoli po domluvě
+* Tel: +420 777 052 248
+* Konzultace: Teamsy, místnost 217, kdykoli po domluvě
 
 ---
 
@@ -82,28 +84,57 @@ Software & solutions architect, analyst and occasional teacher with a passion fo
 * MS 365, Eset, GA, SEO, marketing a další
 
 ---
+layout: two-cols-header
+---
 
 # Realizované projekty
 
-* Projects for implementation of TAF TSI (Technical Specification for Interoperability relating to Telematics Applications for Freight Services)
-* Personální a informační systémy
-* Operational and control systems of railway transport
-* Container Terminal Management System
-* System for familiarising employees with the directives
-* Loco and wagon repair management system
-* Document management system with workflows
-* Customer relationship management
-* Business intelligence and/or Reporting system
+Role: Projektový manažer, architekt, analytik a občasný vývojář
 
-<!--
-Specializace HRM a rail logi systems
--->
+::left::
 
+- **NIS2 Compliance**  
+  *Zavedení procesů a systémů pro splnění požadavků směrnice NIS2 (Network and Information Systems Directive) v rámci kybernetické bezpečnosti.*
 
+- **Systémy a procesy pro DevOps**  
+  *Vybudování oddělení a zavedení procesů a systémů pro vývoj a nasazení aplikací.* Docker, Elastic, Sentry, Git/GitHub, Grafana, ...
 
+- **TAF TSI (Technická specifikace pro interoperabilitu)**  
+  *železniční nákladní doprava<br>*
+  *intermodal a kontejnerová přeprava*
 
+- **Mzdový a personální systémy**  
+  *Implementace systémů KS, Pema, Pers, Abra pro správu mezd a personálních dat.*
 
+::right::
 
+- **Mobilní terminály a MDM**  
+  *Aplikace pro řízení personálu v terénu* Workspace One, MobiDriver, Navigace
+
+- **Business Intelligence a reporting**  
+  *Systémy pro analýzu a výměny dat, automatizace reportů*
+
+- **Řídicí systémy železniční dopravy**  
+  *Vývoj operačních a kontrolních systémů pro železniční dopravu.* LWP, Eval, isdl, ...
+
+- **Systém správy oprav**  
+  *Řízení oprav a údržby kolejových vozidel.*
+
+---
+
+# Realizované projekty
+
+- **Customer Relationship Management (CRM)**  
+  *Systémy pro správu vztahů se zákazníky a kalkulační systém.* kaplan, plusKlub
+
+- **Systém správy dokumentů**  
+  *Implementace DMS pro správu smluv, faktur, atd.* Sharepoint, Nintex, Treeinfo, Alfresco
+
+- **Systém pro seznámení s předpisy**  
+  *Nástroj pro obeznámení zaměstnanců s interními směrnicemi a předpisy.* Doku, Manes, Alfresco
+
+- **Container Terminal Management System**  
+  *Řízení provozu kontejnerových terminálů.* Konti
 
 ---
 layout: image-right
@@ -158,41 +189,77 @@ layout: two-cols-header
 # Organizace předmětu
 
 * Výuka probíhá formou přednášek a cvičení
-* Vypracované cvičení a úkoly (Cvičení na sebe navazují)
-* Výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
+* Cvičení na sebe obsahově anebo výukově navazují
+* Přednášky, výukové materiály a úkoly jsou na Moodle: www.oa-opava.net
 * Zdrojové kódy odevzdáváme výhradně přes GitHub
 * Absence - Po návratu dopracovat chybějící cvičení
 
+---
+
+# Pravidla
+
+- Jídlo a pití dle libosti, ale v rámci mezí slušného chování
+- Na toaletu v průběhu hodin, neptáme se, oznámíme, ale vždy jen jednotlivě
+- Všechny židle budou vždy dole
+- Na konci hodiny, židle nahoru, zavřená okna - odpovídá služba.
 
 ---
 
-# Hodnocení
+# Hodnocení a pravidla
 
 Známky získáváte za:
 
-* Průběžná práce a aktivita v hodinách
-* Vypracované cvičení a úkoly (Cvičení na sebe navazují)
-* Testy
-  * Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
-  * U delší objektivní absence dle domluvy.
-  * Výukové materiály dovoleny, není-li uvedeno jinak.
-  * Kopírování, opisování a AI nikoli.
-  * Komu se nepovede známka, může si vylepšit opravou.
-* Domluvě a vlastní iniciativě se meze nekladou.
+- Průběžná práce a aktivita v hodinách
+- Všechny vypracované cvičení a úkoly (Cvičení na sebe navazují)
+- Projekty a skupinová cvičení
+- Opravy a zlepšení známky
+    - Komu se nepovede známka, může si vylepšit opravou. (původní známka zůstává)
+    - Domluvě a vlastní iniciativě se meze nekladou.
 
+---
+
+## Testy
+
+- Testy
+    - Výukové materiály dovoleny, není-li uvedeno jinak.
+    - Kopírování, opisování a AI nikoli.
+    - Každý zahájený test znamená jeho známkování (ikdyž není určen pro Vás).
+- Absance testu
+    - Není-li psán test v řádném termínu, po návratu do dvou vyučovacích hodin požádat o náhradní termín.
+    - Žádáme minimálně 2 pracovní dny předem.
+    - U delší objektivní absence dle domluvy.
+    - Svou klasifikaci si hlídáte sami.
 
 ---
 
 # Hodnotící škála
 
-| Rozsah  | Známka | Rozsah | Známka |
-|---------|-------|--------|-------|
-| 88-100% | 1     | 86-87% | 1-    |
-| 73-85%  | 2     | 71-72% | 2-    |
-| 56-70%  | 3     | 54-55% | 3-    |
-| 40-53%  | 4     | 38-39% | 4-    |
-| 0-37%   | 5     |        |       |
+| **Známka**           | **Rozsah** | **Popis**                                                                                                              |
+|----------------------|------------|------------------------------------------------------------------------------------------------------------------------|
+| **1 – výborný**      | 100–90%    | Kód je funkční, čitelný, efektivní, bezpečný a přehledně strukturovaný.<br>Dodržuje zadání a základní pravidla zápisu. |
+| **2 – chvalitebný**  | 89–75%     | Kód je funkční, obsahuje drobné chyby nebo nedostatky.<br>Zadání je splněno.                                           |
+| **3 – dobrý**        | 74–60%     | Kód je částečně funkční, obsahuje chyby nebo má výraznější nedostatky.<br>Zadání je splněno jen zčásti.                |
+| **4 – dostatečný**   | 59–40%     | Program je neúplný nebo funguje jen částečně. Obsahuje mnoho chyb, ale je vidět snaha o řešení.                        |
+| **5 – nedostatečný** | 39–0%      | Program nefunguje nebo zcela chybí. Zadání není splněno.                                                               |
 
+---
+
+# Kritéria hodnocení
+
+1. Technická správnost
+    - Správná syntaxe
+    - Funkčnost všech částí kódu
+    - Bez zbytečných částí kódu
+
+2. Splnění zadání
+    - Implementace všech požadovaných funkcionalit
+
+3. Styl kódu:
+    - Přehledné odsazení
+    - Použití komentářů
+
+4. Bonusové body:
+    - Originální a efektivní řešení
 
 ---
 
@@ -230,7 +297,7 @@ image: /predstaveni.jpg
 Registrace kurzu na Moodle:
 
 * Přejděte na www.oa-opava.net
-* Zapište se do kurzu PVA4 2024/2025 - Programování a vývoj aplikací
+* Zapište se do kurzu **pva4 2025/2026** - Programování a vývoj aplikací
   (sekce Informační technologie\Adam Fišer\)
 * Nastavte si profilovou fotku.
 
