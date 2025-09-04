@@ -121,10 +121,13 @@ Role: Projektový manažer, architekt, analytik a občasný vývojář
   *Řízení oprav a údržby kolejových vozidel.*
 
 ---
+layout: two-cols-header
 hideInToc: true
 ---
 
 # Realizované projekty
+
+::left::
 
 - **Customer Relationship Management (CRM)**  
   *Systémy pro správu vztahů se zákazníky a kalkulační systém.* kaplan, plusKlub
@@ -137,6 +140,18 @@ hideInToc: true
 
 - **Container Terminal Management System**  
   *Řízení provozu kontejnerových terminálů.* Konti
+
+- a mnoho dalšího ...
+
+::right::
+
+---
+layout: section
+image: https://cover.sli.dev
+hideInToc: true
+---
+
+# PVA2 Programování a vývoj aplikací
 
 ---
 layout: image-right
