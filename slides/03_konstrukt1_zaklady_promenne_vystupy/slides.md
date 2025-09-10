@@ -112,6 +112,8 @@ layout: default
 ```
 
 ---
+hideInToc: true
+---
 
 # Dokumentační komentáře
 Ukázka dokumentačního komentáře v kódu pro Doctrrine ORM
@@ -166,32 +168,40 @@ hideInToc: true
 
 # Proměnné
 
-- Proměnné v PHP začínají znakem `$` a následuje název proměnné
-- (Znak `$` lze zapsat [Pravý ALT] + [Ů])
-- Proměnné mohou obsahovat písmena, číslice a podtržítko
-- Proměnné nesmí začínat číslem
-- Proměnné jsou case-sensitive - rozlišují se velikost písmen
-- Proměnné by měly být pojmenovány tak, aby bylo jasné, co obsahují
+```php
+<?php
+
+$nazevPromenne = 'Hodnota proměnné';
+```
+
+
+- Proměnné v PHP začínají znakem `$` (<kbd>AltGr</kbd> + <kbd>ů</kbd>) a následuje text pojmenování
+- Název proměnné
+  - může obsahovat až 255 znaků (písmena, číslice a podtržítko)
+  - nesmí začínat číslem
+  - pojmenovány tak, aby bylo jasné, co obsahují
+- Proměnné jsou **case-sensitive** - rozlišují se velikost písmen
 - Přiřazení hodnoty pomocí znaku rovnítko `=`
+- Textové hodnoty se uzavírají do jednoduchých `'` nebo dvojitých `"` uvozovek
 - Proměnné se ukončují středníkem `;`
 - Mohou být přetypovány
-- Mohou být deklarovány bez hodnoty
 
 ---
 
 # Deklarace proměnné
 
-```php {all|3-4|5|6|7|9-10|3-4,12|all}
+```php {all|3-4|5|6|7|8|9-11|all}
 <?php
 
+$string = 'Textový řetězec';
 $string = "Textový řetězec";
 $stringInt = '14'; // stále textový řetězec
 $integer = 14;
 $boolean = TRUE;
 $array = ['pole','jiné pole'];
  
-$uvozovky = "Textový výstup";
-$apostrof = 'Textový výstup';
+$uvozovky_dvojite = "Textový výstup";
+$uvozovky_jednoduche = 'Textový výstup';
 
 $vystupViceRadku = "Dlouhý text\\ndruhý řádek";
 
