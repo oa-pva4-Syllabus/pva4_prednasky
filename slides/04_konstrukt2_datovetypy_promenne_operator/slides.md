@@ -49,16 +49,16 @@ layout: default
 
 # Datové typy
 
-* PHP je dynamicky typovaný jazyk
-* Datové typy se určují automaticky podle obsahu proměnné
-* PHP podporuje několik základních datových typů:
-  * Integer
-  * Float
-  * String
-  * Boolean
-  * Array
-  * Object
-  * NULL
+- PHP je dynamicky typovaný jazyk
+- Datové typy se určují automaticky podle obsahu proměnné
+- PHP podporuje několik základních datových typů:
+  - Integer
+  - Float
+  - String
+  - Boolean
+  - Array
+  - Object
+  - NULL
 
 <!--
 Z kontextu se datový typ rozpozná také při operacích, příkladem může být násobení. Pokud násobíme dvě čísla, kdy jedno z nich je definované jako datový typ float, poté oba operandy jsou brané jako float a výsledek bude v typu float.
@@ -69,14 +69,14 @@ Z kontextu se datový typ rozpozná také při operacích, příkladem může b�
 
 # `String`
 
-* Řetězec znaků
-* Deklarace pomocí apostrofu (jednoduchých) nebo dvojitých uvozovek
-* Apostrof - `'`
-* Dvojité uvozovky - `"`
-* Výhoda dvojitých uvozovek je možnost vkládat proměnné do řetězce
-* Nevýhoda dvojitých uvozovek je, že PHP musí prohledat řetězec a nahradit proměnné za jejich hodnoty + zpracovat escape sekvence
-* V případě potřeby můžeme text rozdělit do více řádků
-* Skládání řetězců pomocí tečky `.`
+- Řetězec znaků
+- Deklarace pomocí apostrofu (jednoduchých) nebo dvojitých uvozovek
+- Apostrof - `'`
+- Dvojité uvozovky - `"`
+- Výhoda dvojitých uvozovek je možnost vkládat proměnné do řetězce
+- Nevýhoda dvojitých uvozovek je, že PHP musí prohledat řetězec a nahradit proměnné za jejich hodnoty + zpracovat escape sekvence
+- V případě potřeby můžeme text rozdělit do více řádků
+- Skládání řetězců pomocí tečky `.`
 
 
 <v-click>
@@ -100,8 +100,8 @@ echo $jmeno; // PVA
 
 ### Spojování řetězců
 
-* Spojení řetězců pomocí tečky `.`
-* Tečka slouží k spojení dvou nebo více řetězců
+- Spojení řetězců pomocí tečky `.`
+- Tečka slouží k spojení dvou nebo více řetězců
 
 ```php {all|1-4|6|7|8|all}
 $jmeno = 'PVA';
@@ -133,17 +133,17 @@ echo $promenna; // Hello, world PVA!
 
 # `Integer`
 
-* Celé číslo
-* Může být záporné nebo kladné
-* Bez desetinné čárky
-* Bez uvozovek
-* Bez mezer
-* Bez závorek
+- Celé číslo
+- Může být záporné nebo kladné
+- Bez desetinné čárky
+- Bez uvozovek
+- Bez mezer
+- Bez závorek
 
 <v-click>
 
-* 32bit: -2,147,483,648 až 2,147,483,647
-* 64bit: -9,223,372,036,854,775,808 až 9,223,372,036,854,775,807
+- 32bit: -2,147,483,648 až 2,147,483,647
+- 64bit: -9,223,372,036,854,775,808 až 9,223,372,036,854,775,807
 
 </v-click>
 
@@ -161,13 +161,13 @@ var_dump($cislo); // int(42)
 
 # `Float`
 
-* Datový typ pro reálná čísla s plovoucí desetinnou čárkou
-* Desetinné číslo
-* Může být záporné nebo kladné
-* S desetinnou čárkou, ale pozor, **píšeme s tečkou**
-* Bez uvozovek
-* Bez mezer
-* Bez závorek
+- Datový typ pro reálná čísla s plovoucí desetinnou čárkou
+- Desetinné číslo
+- Může být záporné nebo kladné
+- S desetinnou čárkou, ale pozor, **píšeme s tečkou**
+- Bez uvozovek
+- Bez mezer
+- Bez závorek
 
 <v-click>
 
@@ -207,10 +207,10 @@ $var1 / $var3;
 
 # `Boolean`
 
-* Logický datový typ
-* Může nabývat hodnot `true` nebo `false`
-* V PHP je možné použít i hodnoty `1` a `0`
-* Hodnoty `true` a `false` jsou case-insensitive
+- Logický datový typ
+- Může nabývat hodnot `true` nebo `false`
+- V PHP je možné použít i hodnoty `1` a `0`
+- Hodnoty `true` a `false` jsou case-insensitive
 
 <v-click>
 
@@ -231,16 +231,16 @@ var_dump($nepravda); // bool(false)
 
 # Operátor
 
-* Symbol, který provádí operaci mezi dvěma hodnotami
-* Operátor `==` porovnává hodnoty proměnných
-* Operátor `===` porovnává hodnoty a datové typy proměnných
-* Operátor `!=` porovnává, zda se hodnoty nerovnají
-* Operátor `!==` porovnává, zda se hodnoty a datové typy nerovnají
-* Operátor `<>` porovnává, zda se hodnoty nerovnají
-* Operátor `>` vrací `true`, pokud je první hodnota větší než druhá
-* Operátor `<` vrací `true`, pokud je první hodnota menší než druhá
-* Operátor `>=` vrací `true`, pokud je první hodnota větší nebo rovna druhé
-* Operátor `<=` vrací `true`, pokud je první hodnota menší nebo rovna druhé
+- Symbol, který provádí operaci mezi dvěma hodnotami
+- Operátor `==` porovnává hodnoty proměnných
+- Operátor `===` porovnává hodnoty a datové typy proměnných
+- Operátor `!=` porovnává, zda se hodnoty nerovnají
+- Operátor `!==` porovnává, zda se hodnoty a datové typy nerovnají
+- Operátor `<>` porovnává, zda se hodnoty nerovnají
+- Operátor `>` vrací `true`, pokud je první hodnota větší než druhá
+- Operátor `<` vrací `true`, pokud je první hodnota menší než druhá
+- Operátor `>=` vrací `true`, pokud je první hodnota větší nebo rovna druhé
+- Operátor `<=` vrací `true`, pokud je první hodnota menší nebo rovna druhé
 
 ---
 hideInToc: true
@@ -248,21 +248,21 @@ hideInToc: true
 
 # Operátor
 
-* Operátor `&&` vrací `true`, pokud jsou oba výrazy pravdivé
-* Operátor `||` vrací `true`, pokud je alespoň jeden výraz pravdivý
-* Operátor `!` vrací `true`, pokud je výraz nepravdivý
-* Operátor `xor` vrací `true`, pokud je jeden z výrazů pravdivý a druhý nepravdivý
-* Operátor `??` vrací první hodnotu, pokud je definovaná, jinak druhou hodnotu
+- Operátor `&&` vrací `true`, pokud jsou oba výrazy pravdivé
+- Operátor `||` vrací `true`, pokud je alespoň jeden výraz pravdivý
+- Operátor `!` vrací `true`, pokud je výraz nepravdivý
+- Operátor `xor` vrací `true`, pokud je jeden z výrazů pravdivý a druhý nepravdivý
+- Operátor `??` vrací první hodnotu, pokud je definovaná, jinak druhou hodnotu
 
 ---
 
 # `NULL`
 
-* Speciální hodnota, která znamená, že proměnná nemá žádnou hodnotu
-* V PHP je možné použít i hodnotu `null`
-* Hodnota `null` je case-insensitive
-* Proměnná, která nebyla inicializována, má hodnotu `null`
-* Proměnnou můžeme nastavit na hodnotu `null` kdykoliv
+- Speciální hodnota, která znamená, že proměnná nemá žádnou hodnotu
+- V PHP je možné použít i hodnotu `null`
+- Hodnota `null` je case-insensitive
+- Proměnná, která nebyla inicializována, má hodnotu `null`
+- Proměnnou můžeme nastavit na hodnotu `null` kdykoliv
 
 <v-click>
 
@@ -290,8 +290,8 @@ image: https://cover.sli.dev
 - Každá hodnota má svůj klíč
   - klíčem může být číslo nebo řetězec znaků
   - indexovány (číslovány) od 0
-* Hodnota pole může obsahovat různé datové pole vč. jiného pole (multidimenzionální pole)
-* Na prvek pole lze přistupovat přes index, nebo u asociativních polí i přes klíč
+- Hodnota pole může obsahovat různé datové pole vč. jiného pole (multidimenzionální pole)
+- Na prvek pole lze přistupovat přes index, nebo u asociativních polí i přes klíč
 
 <v-click>
 
@@ -350,11 +350,11 @@ echo $osoba["vek"]; // 30
 
 # Vícerozměrné pole
 
-* Pole může obsahovat jiné pole
-* Vnořené pole se nazývá multidimenzionální pole
-* Každé vnořené pole může mít jiný počet prvků
-* Vnořené pole může být asociativní nebo indexované
-* Vnořené pole může obsahovat další vnořené pole
+- Pole může obsahovat jiné pole
+- Vnořené pole se nazývá multidimenzionální pole
+- Každé vnořené pole může mít jiný počet prvků
+- Vnořené pole může být asociativní nebo indexované
+- Vnořené pole může obsahovat další vnořené pole
 
 <v-click>
 
@@ -393,14 +393,26 @@ echo $cars[3][0].': In stock: '.$cars[3][1].', sold: '.$cars[3][2].'.<br>'; // L
 
 ---
 
+# Vícerozměrné pole - asociativní
+
+```php
+$zakaznik = array(
+    array("firma" => "Nezávislí Dev, v.o.s.", "obrat" => 150450, "aktivni" => true),
+    array("firma" => "Nová vývojová, a.s.", "obrat" => 5978949), "aktivni" => true,
+    array("firma" => "Dvořákova aplikační, s.r.o.", "obrat" => 123456, "aktivni" => false) // bez čárky na konci posledního prvku
+);
+echo $zakaznik[0]["firma"] . " má obrat " . $zakaznik[0]["obrat"]; // Nezávislí Dev, v.o.s. má obrat 150450
+```
+
+---
+
 # Přetypování
 
-* Přetypování je změna datového typu proměnné
-* Přetypování může být implicitní nebo explicitní
-* Implicitní přetypování je automatické
-* Explicitní přetypování je manuální
-* Přetypování může být nutné při operacích s různými datovými typy
-* Přetypování může být nutné při porovnávání hodnot různých datových typů
+- Přetypování je změna datového typu proměnné
+- Přetypování může být
+  - implicitní - automatické, např. při operacích s různými datovými typy
+  - explicitní - manuální, pomocí předpony s názvem datového typu v závorkách
+
 
 <v-click>
 
@@ -428,16 +440,16 @@ Pozor, přetypování může způsobit ztrátu dat, například při přetypová
 
 # Shrnutí
 
-* PHP je dynamicky typovaný jazyk
-* Datové typy se určují automaticky podle obsahu proměnné
-* PHP podporuje několik základních datových typů: Integer, Float, String, Boolean, Array, Object, NULL
-* Spojujeme řetězce pomocí tečky `.`
-* Operátory slouží k provádění operací mezi hodnotami
-* Pole je uspořádaná kolekce hodnot
-* K hodnotě pole přistupujeme přes číselný index nebo klíč
-* Pole může být asociativní nebo indexované
-* Pole může být multidimenzionální
-* Přetypování je změna datového typu proměnné
+- PHP je dynamicky typovaný jazyk
+- Datové typy se určují automaticky podle obsahu proměnné
+- PHP podporuje několik základních datových typů: Integer, Float, String, Boolean, Array, Object, NULL
+- Spojujeme řetězce pomocí tečky `.`
+- Operátory slouží k provádění operací mezi hodnotami
+- Pole je uspořádaná kolekce hodnot
+- K hodnotě pole přistupujeme přes číselný index nebo klíč
+- Pole může být asociativní nebo indexované
+- Pole může být multidimenzionální
+- Přetypování je změna datového typu proměnné
 
 ---
 src: '../../pages/thanku.md'
