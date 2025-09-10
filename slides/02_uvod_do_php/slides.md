@@ -102,10 +102,10 @@ Proč nepoužívat PHP
 
 - **Rychlost** – PHP je interpretovaný jazyk, což znamená, že je pomalejší než kompilované jazyky.
 - **Špatná kvalita kódu** – PHP je velmi flexibilní jazyk, což může vést k napsání špatného kódu.
-- **Bezpečnost** – PHP je známý svými bezpečnostními problémy.
-- **Špatná podpora** – PHP nemá dobrou podporu pro vývojáře.
-- **Špatná dokumentace** – PHP má špatnou dokumentaci.
-- **Nízká škálovatelnost** – PHP je špatný pro velké projekty.
+- **Špatná podpora** – PHP nenabízí placenou podporu pro vývojáře.
+- ~~**Bezpečnost** – PHP je známý svými bezpečnostními problémy.~~
+- ~~**Špatná dokumentace** – PHP má špatnou dokumentaci.~~
+- ~~**Nízká škálovatelnost** – PHP je špatný pro velké projekty.~~
 
 ---
 
