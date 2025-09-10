@@ -112,6 +112,7 @@ echo $promenna; // Hello, world!
 echo 'Hello, world ' . 'PVA';          // Hello, world PVA
 echo 'Hello, world ' . $jmeno;          // Hello, world PVA
 echo 'Hello, world ' . $jmeno . '!';    // Hello, world PVA!
+echo 'Hello, world <strong>' . $jmeno . '</strong>!';    // Hello, world PVA!
 ```
 
 </v-click>
@@ -284,17 +285,12 @@ image: https://cover.sli.dev
 
 # Array
 
-* Datový typ pro ukládání více hodnot
-* Pole je uspořádaná kolekce hodnot
-* Každá hodnota má svůj klíč
-* Klíč může být číslo nebo řetězec
-* Pole může obsahovat jiné pole
-* Pole může obsahovat různé datové typy
-* Pole může být asociativní nebo indexované
-* Pole může být multidimenzionální
-* Pole může být prázdné
-* Pole může být inicializováno pomocí `array()` nebo `[]`
-* Hodnoty pole jsou indexovány (číslovány) od 0
+- Datový typ pro ukládání více hodnot do uspořádané kolekce
+- Inicializujeme pomocí `array()` nebo `[]`
+- Každá hodnota má svůj klíč
+  - klíčem může být číslo nebo řetězec znaků
+  - indexovány (číslovány) od 0
+* Hodnota pole může obsahovat různé datové pole vč. jiného pole (multidimenzionální pole)
 * Na prvek pole lze přistupovat přes index, nebo u asociativních polí i přes klíč
 
 <v-click>
@@ -317,23 +313,38 @@ echo $poleKlic["jmeno"]; // Adam
 
 # Asociativní pole
 
-* Asociativní pole je pole, kde klíče jsou řetězce
-* Klíče jsou unikátní
-* Klíče jsou case-sensitive
-* Klíče mohou být libovolného datového typu
-* Klíče mohou být řetězce nebo čísla
+- Asociativní pole je pole, kde klíčem jsou uživatelem definované řetězce
+- Klíče jsou
+  - unikátní
+  - jsou case-sensitive
+  - mohou být libovolného datového typu, typicky string nebo integer
  
 <v-click>
 
 ```php
 $pole = array(klic => hodnota);
 
-
-$vek = ["Peter" => "35", "Ben" => "37", "Joe" => "43"];
+$vek = ["Peter" => 35, "Ben" => 37, "Joe" => 43];
 echo 'Peter is ' . $vek["Peter"] . ' years old.'; // Peter is 35 years old.
 ```
 
 </v-click>
+
+<v-click>
+
+```php
+$osoba = array(
+  "jmeno" => "Jarmilka",
+  "prijmeni" => "Testovací",
+  "vek" => 30
+);
+echo $osoba["jmeno"]; // Jarmilka
+echo $osoba["prijmeni"]; // Testovací
+echo $osoba["vek"]; // 30
+```
+
+</v-click>
+
 
 ---
 
