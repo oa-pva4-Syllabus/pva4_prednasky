@@ -6,8 +6,8 @@
 | 02 | [Konstrukt 1 - Základy, proměnné, výstupy](https://oa-pva4-syllabus.github.io/pva4_prednasky/03_konstrukt1_zaklady_promenne_vystupy/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/03_konstrukt1_zaklady_promenne_vystupy/03_konstrukt1_zaklady_promenne_vystupy.pdf) |
 | 03 | [Konstrukt 2: Datové typy, proměnné, operátory](https://oa-pva4-syllabus.github.io/pva4_prednasky/04_konstrukt2_datovetypy_promenne_operator/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/04_konstrukt2_datovetypy_promenne_operator/04_konstrukt2_datovetypy_promenne_operator.pdf) |
 | 04 | [Formuláře](https://oa-pva4-syllabus.github.io/pva4_prednasky/05_formulare/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/05_formulare/05_formulare.pdf) |
-| 05 | [Řídící struktury](https://oa-pva4-syllabus.github.io/pva4_prednasky/06_ridici_struktury/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/06_ridici_struktury/06_ridici_struktury.pdf) |
-| 06 | [Příkazy Inlcude a Require](https://oa-pva4-syllabus.github.io/pva4_prednasky/07_prikazy_include_require/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/07_prikazy_include_require/07_prikazy_include_require.pdf) |
+| 05 | [Příkazy Inlcude a Require](https://oa-pva4-syllabus.github.io/pva4_prednasky/06_prikazy_include_require/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/06_prikazy_include_require/06_prikazy_include_require.pdf) |
+| 06 | [Řídící struktury](https://oa-pva4-syllabus.github.io/pva4_prednasky/07_ridici_struktury/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/07_ridici_struktury/07_ridici_struktury.pdf) |
 | 07 | [Řízení bezpečnosti](https://oa-pva4-syllabus.github.io/pva4_prednasky/09_auth/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/09_auth/09_auth.pdf) |
 | 08 | [Sessions](https://oa-pva4-syllabus.github.io/pva4_prednasky/10_sessions/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/10_sessions/10_sessions.pdf) |
 | 09 | [Email](https://oa-pva4-syllabus.github.io/pva4_prednasky/11_email/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/11_email/11_email.pdf) |
