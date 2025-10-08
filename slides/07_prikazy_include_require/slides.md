@@ -47,6 +47,15 @@ layout: default
 <Toc :columns="2" minDepth="1" maxDepth="1"></Toc>
 ---
 
+# Příkazy `include` a `require`
+
+## Cíle hodiny
+- Pochopit rozdíl mezi `include` a `require`.
+- Naučit se, kdy použít `include_once` a `require_once`.
+- Osvojit si princip modularity a opakovaného využití kódu.
+
+---
+
 # Include a Require
 
 - Příkazy include a require umožňují zahrnout kód obsažený v souboru do jiného souboru PHP.
@@ -54,10 +63,8 @@ layout: default
 - Typické příklady v non OOP: 
   - Html header, footer, menu
   - Funkce aplikace
-
-
-
-
+  - Konfigurace
+  - Připojení k databázi
 
 ---
 
@@ -71,6 +78,7 @@ layout: default
 
   require("path/to/filename.php");
   require_once("path/to/filename.php");
+  
 ?>
 ```
 
@@ -118,6 +126,83 @@ include_once("footer.php");
 ```
 
 ---
+layout: two-cols-header
+---
+
+# Modulární struktura projektu
+
+::left::
+
+## Základní struktura
+```
+/project
+  /includes
+    config.php
+    db.php
+    functions.php
+  /templates
+    header.php
+    footer.php
+    menu.php
+  index.php
+  about.php
+```
+
+
+
+```php
+<?php
+    require_once("includes/config.php");
+    require_once("includes/db.php");
+    require_once("includes/functions.php");
+    include_once("templates/header.php");
+    include_once("templates/menu.php");
+    //...
+?>
+```
+
+::right::
+
+<v-click>
+
+## Běžnější struktura
+
+Nebo lépe, do každho scriptu přidáte volání `common.php`
+
+```php
+<?php
+    require_once("common.php");
+?>
+```
+
+Obsah `common.php`
+
+```php
+<?php
+    require_once("includes/config.php");
+    require_once("includes/db.php");
+    require_once("includes/functions.php");
+    include_once("templates/header.php");
+    include_once("templates/menu.php");
+?>
+```
+
+</v-click>
+
+
+---
+
+# Porovnání chybového chování
+
+| Funkce          | Pokud soubor neexistuje             | Opakované načtení |
+|-----------------|-------------------------------------|-------------------|
+| `include`       | E_WARNING – skript pokračuje        | Ano               |
+| `require`       | E_COMPILE_ERROR – skript se zastaví | Ano               |
+| `include_once`  | E_WARNING – skript pokračuje        | Ne                |
+| `require_once`  | E_COMPILE_ERROR – skript se zastaví | Ne                |
+
+
+---
 
 # Shrnutí
 
@@ -126,6 +211,12 @@ include_once("footer.php");
 - `include_once` a `require_once` zamezí opakovanému zahrnutí souboru.
 - `include_once` a `require_once` jsou užitečné, pokud máte skript, který může zahrnovat stejný soubor vícekrát.
 - `include_once` a `require_once` zamezí opakovanému zahrnutí souboru.
+
+## Používejte
+
+- `require` pro závislosti, bez kterých skript nedává smysl (např. config, třídy).
+- `include` pro volitelné části (např. šablony).
+-  `*_once` varianty, pokud soubor může být zahrnut vícekrát.
 
 ---
 src: '../../pages/thanku.md'
