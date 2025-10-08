@@ -94,11 +94,12 @@ layout: default
 
 ---
 
-# Dokumentační komnetáře <MarkerOptional />
+# Dokumentační komentář <MarkerOptional />
 
-- Dokumentační komentáře jsou speciální komentáře, které se používají k dokumentaci kódu
-- Dokumentační komentáře začínají `/**` a končí `*/`
-- Dokumentační komentáře mohou obsahovat speciální značky, které jsou následovány `@`
+- jsou speciální komentáře, které se používají k dokumentaci kódu
+- začínají `/**` a končí `*/`
+- mohou obsahovat speciální značky, které jsou následovány `@`
+- nástroje z nich generují scripty, dokumentaci anebo je využívají pro různé účely (např. IDE je využívají pro nápovědu)
 
 ```php {all|6-7}
 <?php
