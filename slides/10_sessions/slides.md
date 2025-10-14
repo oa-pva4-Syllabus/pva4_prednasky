@@ -55,6 +55,7 @@ layout: default
 - Session uloží data na webový server (a nebo do databáze) a do prohlížeče klienta uloží identifikátor.
 - Podle identifikátoru pozná server, k jakému klientu data patří.
 - Uživatel neví, co je v sessions uloženo.
+- Sessions jsou ideální pro uložení informací o přihlášeném uživateli, nákupním košíku apod.
 
 <br>
 
@@ -102,10 +103,24 @@ session_unset();
 
 // ukončení session
 // odstraní všechny session proměnné, adekvátní k funkci session_start()
-// ideální pro zařazení do common footeru
+// ideální pro zařazení do akce logoutu
 session_destroy();
 ?>
 ```
+
+---
+
+# Parametry session
+
+- Session lze nastartovat s vlastními parametry
+- Parametry lze nastavit i pomocí funkcí, ale musí být nastaveny před spuštěním session
+- Mezi nejčastěji používané patří:
+  - `cache_limiter` - určuje, jakým způsobem bude stránka cachována (výchozí hodnota je `nocache`)
+  - `cookie_lifetime` - doba platnosti cookie v sekundách (výchozí hodnota je `0`, což znamená, že cookie platí do zavření prohlížeče)
+  - `cookie_path` - cesta, pro kterou je cookie platné (výchozí hodnota je `/`, což znamená, že cookie je platné pro celou doménu)
+  - `cookie_domain` - doména, pro kterou je cookie platné (výchozí hodnota je prázdný řetězec, což znamená, že cookie je platné pro aktuální doménu)
+
+Další parametry viz https://www.php.net/manual/en/session.configuration.php
 
 ---
 
@@ -131,15 +146,6 @@ session_set_cookie_params(86400, '/app', '.example.com');
 
 session_start();
 ```
-
-- `cookie_lifetime` - jak dlouho (v sekundách) bude session cookie platná. Standardně je to 0, což znamená, že cookie se zruší při zavření prohlížeče.
-- `cache_limiter` - Nastavuje způsob, jakým bude session řídit cache HTTP. Může nabývat hodnot jako 'nocache', 'private', 'private_no_expire', nebo 'public'. Ovlivňuje, jak bude prohlížeč nebo proxy server pracovat s cache. Například 'nocache' zajišťuje, že obsah nebude uložen do mezipaměti.
-- `cookie_path` Nastavuje cestu, ve které je session cookie dostupná. Výchozí hodnota je '/', což znamená, že cookie je dostupná v celé doméně.
-- `cookie_domain` Nastavuje doménu, ve které je session cookie dostupná. Výchozí hodnota je '', což znamená, že cookie je dostupná v doméně, ze které byla vytvořena. Používá se k tomu, aby session cookie fungovala na více subdoménách.
-
-
-Další parametry viz https://www.php.net/manual/en/session.configuration.php
-
 
 ---
 src: '../../pages/thanku.md'
