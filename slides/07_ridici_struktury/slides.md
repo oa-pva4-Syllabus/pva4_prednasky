@@ -348,6 +348,33 @@ do {
 ---
 layout: cover
 background: https://cover.sli.dev
+hideInToc: true
+---
+
+# Strict types
+
+---
+
+# Strict Types
+
+- PHP je volně typovaný jazyk
+- Přiřazení hodnoty do proměnné nevyžaduje deklaraci datového typu
+- Při volání funkcí se datové typy nepřísně kontrolují
+- Může to vést k neočekávanému chování a chybám
+- Pro eliminaci těchto problémů používáme přísné typování za využití `declare(strict_types=1);`
+
+```php
+// zapnutí vyžadování dodržování kontroly datových typů
+// standardně se uvádí hned za <?php
+// vždy na začátku každého souboru
+declare(strict_types=1);
+```
+
+> **Od nynějška povinně používáme.**
+
+---
+layout: cover
+background: https://cover.sli.dev
 ---
 
 # Funkce
@@ -360,9 +387,7 @@ background: https://cover.sli.dev
 - může přijímat parametry a vrací hodnotu
 - Procedura je blok kódu, který může být znovu použit, ale nevrací hodnotu
 
----
-
-# Interní funkce
+## Interní funkce
 
 - PHP má více než 1000 vestavěných funkcí a navíc si můžete vytvořit vlastní funkce.
 - Kompletní přehled funkcí je uveden na php.net
@@ -370,16 +395,17 @@ background: https://cover.sli.dev
  
 ---
 
-# Uživatelsky definovalé funkce
+# Uživatelsky definované funkce
 
 - Funkce můžete definovat pomocí klíčového slova `function`
 - Nesputí se, dokud nejsou zavolány tzn. nejsou spouštěny automaticky ani při načtení stránky
 - Název funkce musí začínat písmenem nebo podtržítkem, na velikosti písmen nezáleží
 - Návratová hodnota přes `return`
 - Datový typ návratové hodnoty je uveden za dvojtečkou
+- Pokud očekáváme že fce může vracet i `null`, musíme to uvést pomocí `?datovyTyp` nebo `datovyTyp|null`
 
 ```php
-function nazevFunkce(): datovyTyp {
+function nazevFunkce(): datovyTypVystupu {
   // příkazy
   
   // návratová hodnota
@@ -409,7 +435,7 @@ echo pozdrav();
 
 ---
 
-# Parametry funkce
+# Volání funkce s parametry
 
 - Parametry jsou hodnoty, které funkce přijímá a jsou nutné pro vykonání funkce
 - jsou uvedeny v závorkách a odděleny čárkou ve tvaru `datovyTyp parametr1, datovyTyp parametr2, ...`
@@ -427,12 +453,8 @@ function nazevFunkce(string $parametr1, int $parametr2 = null): string {
 # Příklad
 
 ```php
-// zapnutí vyžadování dodržování kontroly datových typů
-// standardně se uvádí hned za <?php
 declare(strict_types=1);
-```
 
-```php
 function writeMessage(string $name, string $msg = "nic nenapsal"): string {
   $output = $name . ' napsal: ' . $msg;
   return $output;
@@ -447,6 +469,50 @@ echo writeMessage('Ilona', 'Jiná zpráva do výstupu');   # Ilona napsal: Jiná
 echo writeMessage('Petr');                              # Petr napsal: nic nenapsal
 ```
 
+---
+layout: two-cols-header
+---
+
+# Rekurze
+
+- Rekurze je technika, kdy funkce volá sama sebe.
+- Používá se pro řešení problémů, které lze rozdělit na menší podobné podproblémy.
+- Každé volání funkce má svůj vlastní kontext a proměnné.
+- Musí obsahovat podmínku pro ukončení rekurze, aby nedošlo k nekonečnému volání.
+
+::left::
+```php
+function rekurzivniFunkce($parametr) {
+    if (podmínkaProUkončení) {
+        return;
+    } else {
+        // příkazy
+        rekurzivniFunkce(novýParametr);
+    }
+}
+```
+::right::
+```php
+function factorial(int $n): int {
+    if ($n <= 1) {
+        return 1;
+    } else {
+        return $n * factorial($n - 1);
+    }
+}
+echo factorial(5); // Výstup: 120
+```
+
+---
+
+# Shrnutí
+
+- Řídící struktury umožňují řídit tok programu na základě podmínek a opakování
+- Podmínky (`if`, `elseif`, `else`, `switch`) umožňují vykonávat různé části kódu na základě splnění určitých podmínek
+- Cykly (`for`, `foreach`, `while`, `do...while`) umožňují opakovaně vykonávat blok kódu, dokud je splněna určitá podmínka
+- Funkce umožňují organizovat kód do samostatných bloků, které lze znovu použít a volat s různými parametry
+- Přísné typování (`declare(strict_types=1);`) pomáhá předcházet chybám tím, že vyžaduje dodržování datových typů při volání funkcí
+- Správné používání řídících struktur a funkcí vede k lepší čitelnosti, údržbě a efektivitě kódu.
 
 ---
 src: '../../pages/thanku.md'
