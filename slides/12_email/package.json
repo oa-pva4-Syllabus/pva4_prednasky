@@ -1,5 +1,5 @@
 {
-  "name": "11_email",
+  "name": "12_email",
   "title": "Email",
   "author": { "name": "Adam Fišer" },
   "type": "module",
@@ -8,6 +8,6 @@
   "scripts": {
     "dev": "slidev",
     "build": "slidev build",
-    "export": "slidev export --output ../11_email.pdf"
+    "export": "slidev export --output ../12_email.pdf"
   }
 }

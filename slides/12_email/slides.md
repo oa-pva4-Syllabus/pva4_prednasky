@@ -27,8 +27,8 @@ export:
 
 #== Slide Info
 src: '../../pages/index.md'
-title: "Email"
-exportFilename: "11_email"
+title: "12 Email"
+exportFilename: "12_email"
 titleTemplate: "PVA4 %s by Adam Fišer"
 info: |
   ## PVA4 Programování a vývoj aplikací
