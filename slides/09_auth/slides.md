@@ -306,6 +306,49 @@ Vyvarovat se:
 - Lastpass – správce hesel s mnoha úniky
 - Používání stejného hesla na více místech
 
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Zákon o kybernetické bezpečnosti
+
+---
+
+# Zákon o kybernetické bezpečnosti
+
+## Klíčové informace
+- Zákon č. 264/2025 Sb., o kybernetické bezpečnosti, vyhlášen 4. 8. 2025. 
+- Účinnost od 1. 11. 2025. 
+- Nahrazuje dřívější zákon č. 181/2014 Sb. a implementuje směrnici NIS2 (EU 2022/2555). 
+- Cíl: zvýšit odolnost a bezpečnost kritické infrastruktury a digitálních služeb v ČR.
+
+## Co se mění – hlavní změny
+- Rozšíření působnosti: týká se více než ~6 000 organizací napříč odvětvími (energetika, doprava, zdravotnictví, infrastruktura, výzkum apod.).
+- Zavedení dvou režimů pro poskytovatele regulované služby:
+    - „vyšší režim“ (essential entities)
+    - „nižší režim“ (important entities)
+- Nové povinnosti: samoidentifikace, registrace u Národní úřad pro kybernetickou a informační bezpečnost (NÚKIB) do 60 dnů, zavedení bezpečnostních opatření, hlášení incidentů.
+
+---
+
+# Zákon o kybernetické bezpečnosti
+
+## Povinnosti organizací
+- Určení odpovědné osoby pro kybernetickou bezpečnost, v „vyšším režimu“ jmenování manažera kybernetické bezpečnosti.
+- Zavedení systému řízení bezpečnostních rizik, vymezení aktiv, aktualizace smluv s dodavateli.
+- Hlášení incidentů: základní hlášení do 24 hodin, následné doplnění do 72 hodin.
+
+## Sankce a odpovědnost
+- Významné pokuty: v „vyšším režimu“ až **250 mil. Kč** nebo **2 % celosvětového obratu**; v „nižším režimu“ až **175 mil. Kč** nebo **1,4 % obratu**.
+- Nově možnost dočasného zákazu výkonu funkce člena statutárního orgánu při závažném opakovaném porušení.
+
+## Dopad pro vás – co udělat
+- Provést **analýzu**, zda vaše organizace spadá pod zákon (poskytovatel regulované služby).
+- Zajistit **registraci** u NÚKIB v čas, pokud je to relevantní.
+- Vypracovat či aktualizovat **interní politiku kybernetické bezpečnosti**, definovat role, procesy rizik, incidentů.
+- Zajistit **školení** zaměstnanců a vedení, připravit dokumentaci pro audit.
+- Nepodceňovat – pro vedení organizace je to strategická záležitost, ne jen IT otázka.
 
 ---
 src: '../../pages/thanku.md'
