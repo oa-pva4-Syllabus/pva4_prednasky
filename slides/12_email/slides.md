@@ -159,5 +159,113 @@ auth_password = mojeTajneHeslo
 ```
 
 ---
+
+# Doporučení a bezpečnost
+
+- ✅ Validuj e-mailové adresy uživatelů.
+- ✅ Omezuj přístup k funkci odesílání.
+- ✅ Loguj odeslané zprávy.
+
+
+⚠️ Nastav správně:
+ - SPF (Sender Policy Framework)
+ - DKIM (DomainKeys Identified Mail)
+ - Reverse DNS a PTR záznamy
+
+---
+
+# Testování odesílání emailů
+
+- Pro testování odesílání emailů můžeš použít nástroje jako Mailtrap nebo Papercut SMTP.
+- Tyto nástroje zachytí odeslané emaily a umožní ti je prohlížet bez skutečného odeslání.
+- Mailtrap nabízí i funkce jako spam testy, analýzu obsahu a další.
+- Papercut SMTP je jednoduchý nástroj pro zachytávání emailů lokálně
+
+| Nástroj                                                              |	Popis |
+|----------------------------------------------------------------------| --- |
+| [Papercut SMTP](https://github.com/ChangemakerStudios/Papercut-SMTP) | Desktop aplikace pro zachytávání emailů |
+| [Mailtrap](https://mailtrap.io/)                                     | Testovací SMTP sandbox |
+| [Mailhog](https://github.com/mailhog/MailHog)                                                          | SMTP + Web UI, funguje v Dockeru |
+
+> Nainstaluj si Papercut SMTP a nastav v `php.ini` `SMTP = localhost`, `smtp_port = 25` a spusť Papercut před odesláním emailu.
+
+---
+layout: image-right
+image: https://cover.sli.dev
+---
+
+# Knihovny pro emaily
+
+---
+
+# Knihovny pro emaily
+- Pro složitější emaily je vhodné použít knihovny, které usnadňují práci s emaily.
+- Mezi nejpoužívanější patří:
+  - PHPMailer
+  - SwiftMailer
+  - Symfony Mailer
+- Tyto knihovny umožňují:
+  - Snadné přidávání příloh
+  - Podpora HTML emailů
+  - Podpora SMTP autentizace, TLS/SSL, DKIM...
+  - Snadné nastavení hlaviček
+
+---
+
+# PHPMailer
+- PHPMailer je jedna z nejpopulárnějších knihoven pro odesílání emailů v PHP.
+- Podporuje odesílání přes SMTP, přidávání příloh, HTML emaily a další funkce.
+- Instalace pomocí Composeru:
+```bash
+composer require phpmailer/phpmailer
+```
+
+---
+
+# Odeslání emailu pomocí PHPMailer
+
+```php
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\Exception;
+
+require 'vendor/autoload.php';
+
+$mail = new PHPMailer(true);
+
+try {
+  $mail->isSMTP();
+  $mail->Host = 'smtp.example.com';
+  $mail->SMTPAuth = true;
+  $mail->Username = 'uzivatel@example.com';
+  $mail->Password = 'tajneheslo';
+  $mail->SMTPSecure = 'tls';
+  $mail->Port = 587;
+
+  $mail->setFrom('from@example.com', 'Moje Aplikace');
+  $mail->addAddress('prijemce@example.com');
+  $mail->Subject = 'Předmět zprávy';
+  $mail->Body = 'Tělo zprávy s podporou <b>HTML</b>';
+  $mail->isHTML(true);
+  
+  $mail->addAttachment('/cesta/k/souboru.pdf', 'soubor.pdf'); // Přidání přílohy
+
+  $mail->send();
+  echo 'Zpráva byla odeslána';
+} catch (Exception $e) {
+  echo "Chyba při odesílání: {$mail->ErrorInfo}";
+}
+```
+
+---
+
+# Shrnutí
+
+- Emailové zprávy jsou důležitou součástí webových aplikací.
+- Hlavičky emailu umožňují nastavit různé parametry zprávy.
+- Funkce `mail()` je základní způsob odesílání emailů v PHP.
+- Pro složitější emaily je vhodné použít knihovny jako PHPMailer.
+- Vždy dbej na bezpečnost a správné nastavení emailových služeb.
+
+---
 src: '../../pages/thanku.md'
 ---
