@@ -364,50 +364,7 @@ layout: two-cols
 
 # Komplexnější případ
 
-```mermaid {theme: 'default', scale: 0.5}
-erDiagram
-    ZAKAZNIK {
-        INT id PK "AUTO_INCREMENT"        
-        VARCHAR(100) jmeno
-        VARCHAR(100) email
-        INT fakt_adresa_id FK "REFERENCES ADRESY(id) ON DELETE SET NULL"
-    }
-    
-    ADRESY {
-        INT id PK "AUTO_INCREMENT"
-        INT zakaznik_id FK "REFERENCES ZAKAZNIK(id)"
-        INT typ "1 = fakturační, 2 = dodací"
-        VARCHAR(255) ulice
-        VARCHAR(100) mesto
-        VARCHAR(10) psc
-        VARCHAR(3) stat "DEFAULT 'CZE'"
-    }
-    
-    OBJEDNAVKA {
-        INT id PK "AUTO_INCREMENT"
-        INT zakaznik_id FK "REFERENCES ZAKAZNIK(id) ON DELETE CASCADE"
-        DATE datum_objednavky
-        INT dodaci_adresa_id FK "REFERENCES ADRESY(id) ON DELETE SET NULL"
-    }
-    
-    POLOZKA {
-        INT id PK "AUTO_INCREMENT"
-        INT objednavka_id FK "REFERENCES OBJEDNAVKA(id) ON DELETE CASCADE"
-        VARCHAR(255) produkt
-        INT mnozstvi "DEFAULT 1"
-        DECIMAL cena
-    }
-    
-    %% Vztahy mezi entitami:
-    ZAKAZNIK ||--o{ ADRESY : "má adresy"
-    OBJEDNAVKA }o--|| ZAKAZNIK : "patří zákazníkovi"
-    OBJEDNAVKA ||--|| ADRESY : "dodací adresa"
-    POLOZKA }o--|| OBJEDNAVKA : "obsahuje položky"
-```
-
-::right::
-
-```sql {*}{maxHeight:'450px'}
+```sql {*}{maxHeight:'420px'}
 -- Vytvoření tabulky zákazníků
 CREATE TABLE ZAKAZNIK (
   id INT AUTO_INCREMENT PRIMARY KEY,
@@ -465,6 +422,48 @@ CREATE TABLE POLOZKA (
 
 ```
 
+::right::
+
+```mermaid {theme: 'default', scale: 0.38}
+erDiagram
+    ZAKAZNIK {
+        INT id PK "AUTO_INCREMENT"        
+        VARCHAR(100) jmeno
+        VARCHAR(100) email
+        INT fakt_adresa_id FK "REFERENCES ADRESY(id) ON DELETE SET NULL"
+    }
+    
+    ADRESY {
+        INT id PK "AUTO_INCREMENT"
+        INT zakaznik_id FK "REFERENCES ZAKAZNIK(id)"
+        INT typ "1 = fakturační, 2 = dodací"
+        VARCHAR(255) ulice
+        VARCHAR(100) mesto
+        VARCHAR(10) psc
+        VARCHAR(3) stat "DEFAULT 'CZE'"
+    }
+    
+    OBJEDNAVKA {
+        INT id PK "AUTO_INCREMENT"
+        INT zakaznik_id FK "REFERENCES ZAKAZNIK(id) ON DELETE CASCADE"
+        DATE datum_objednavky
+        INT dodaci_adresa_id FK "REFERENCES ADRESY(id) ON DELETE SET NULL"
+    }
+    
+    POLOZKA {
+        INT id PK "AUTO_INCREMENT"
+        INT objednavka_id FK "REFERENCES OBJEDNAVKA(id) ON DELETE CASCADE"
+        VARCHAR(255) produkt
+        INT mnozstvi "DEFAULT 1"
+        DECIMAL cena
+    }
+    
+    %% Vztahy mezi entitami:
+    ZAKAZNIK ||--o{ ADRESY : "má adresy"
+    OBJEDNAVKA }o--|| ZAKAZNIK : "patří zákazníkovi"
+    OBJEDNAVKA ||--|| ADRESY : "dodací adresa"
+    POLOZKA }o--|| OBJEDNAVKA : "obsahuje položky"
+```
 
 
 ---
