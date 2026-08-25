@@ -1,2 +1,19 @@
 packages:
   - "slides/*"
+
+# pnpm 11 už nečte pnpm nastavení z .npmrc ani z pole "pnpm" v package.json –
+# vše patří sem (https://pnpm.io/settings).
+
+# vite musí být dosažitelný z generovaného slides/*/vite.config.ts (scripts/build.js)
+shamefullyHoist: true
+autoInstallPeers: true
+
+# Bezpečnostní přepisy tranzitivních závislostí
+overrides:
+  # GHSA-c2j3-45gr-mqc4 aj. – monaco-editor pinuje dompurify 3.4.8
+  dompurify: ^3.4.14
+
+# pnpm 11 vyžaduje explicitní rozhodnutí o install skriptech, jinak `pnpm install` skončí chybou.
+# Chromium se instaluje zvlášť (`pnpm exec playwright install`), postinstall balíčku nepotřebujeme.
+allowBuilds:
+  playwright-chromium: false
