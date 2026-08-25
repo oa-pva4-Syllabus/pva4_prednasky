@@ -28,3 +28,4 @@ slides/**/setup/
 slides/**/global_bottom.vue
 # use pnpm-lock
 yarn.lock
+/.codegraph/
