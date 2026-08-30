@@ -1,5 +1,7 @@
 # Seznam přednášek
 
+> **⚠️ Tento repozitář je archivován.** Přednášky PVA4 se dál udržují ve sloučeném monorepu [`oa-syllabus/prednasky`](https://github.com/oa-syllabus/prednasky) — aktuální verze je na [oa-syllabus.github.io/prednasky/pva4/](https://oa-syllabus.github.io/prednasky/pva4/). Tento repozitář se dál needituje.
+
 | # | Přednáška | PDF |
 |---:|-----------|-----|
 | 01 | [Úvod do PHP](https://oa-pva4-syllabus.github.io/pva4_prednasky/02_uvod_do_php/) | [PDF](https://oa-pva4-syllabus.github.io/pva4_prednasky/02_uvod_do_php/02_uvod_do_php.pdf) |
